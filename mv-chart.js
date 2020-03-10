@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit-element";
 import "chartjs";
+import "chartjs-plugin-datalabels";
 
 export class MvChart extends LitElement {
   static get properties() {
@@ -7,6 +8,7 @@ export class MvChart extends LitElement {
       type: { type: String, attribute: true },
       data: { type: Object, attribute: false, reflect: true },
       options: { type: Object, attribute: false, reflect: true },
+      plugins: { type: Object, attribute: false, reflect: true },
 
       //  valid theme values are: "light", "dark"
       //    default: "light"
@@ -19,9 +21,9 @@ export class MvChart extends LitElement {
       :host {
         font-family: var(--font-family, Arial);
         font-size: var(--font-size-m, 10pt);
-        --chart-margin: var(--mv-chart-margin, 20px auto);
-        --chart-height: var(--mv-chart-height, 500px);
-        --chart-width: var(--mv-chart-width, 800px);
+        --chart-margin: var(--mv-chart-margin, auto);
+        --chart-height: var(--mv-chart-height, 300px);
+        --chart-width: var(--mv-chart-width, 400px);
         --light-background: var(--mv-chart-background, #ffffff);
         --dark-background: var(--mv-chart-dark-background, #373e48);
         --light-color: var(--mv-chart-light-color, #000000);
@@ -29,9 +31,9 @@ export class MvChart extends LitElement {
       }
 
       .mv-chart {
+        margin: var(--chart-margin);
         height: var(--chart-height);
         width: var(--chart-width);
-        margin: var(--chart-margin);
         position: relative;
       }
 
@@ -43,6 +45,59 @@ export class MvChart extends LitElement {
       .dark {
         background-color: var(--dark-background);
         color: var(--dark-color);
+      }
+
+      /* Chart.js custom styles 
+       *
+       * DOM element rendering detection
+       * https://davidwalsh.name/detect-node-insertion
+       */
+      @keyframes chartjs-render-animation {
+        from {
+          opacity: 0.99;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .chartjs-render-monitor {
+        animation: chartjs-render-animation 0.001s;
+      }
+
+      /*
+       * DOM element resizing detection
+       * https://github.com/marcj/css-element-queries
+       */
+      .chartjs-size-monitor,
+      .chartjs-size-monitor-expand,
+      .chartjs-size-monitor-shrink {
+        position: absolute;
+        direction: ltr;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        pointer-events: none;
+        visibility: hidden;
+        z-index: -1;
+      }
+
+      .chartjs-size-monitor-expand > div {
+        position: absolute;
+        width: 1000000px;
+        height: 1000000px;
+        left: 0;
+        top: 0;
+      }
+
+      .chartjs-size-monitor-shrink > div {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        left: 0;
+        top: 0;
       }
     `;
   }
@@ -64,10 +119,12 @@ export class MvChart extends LitElement {
   firstUpdated() {
     if (!this.chart) {
       const { type, data, options } = this;
-      const container = this.shadowRoot
+      const plugins = this.plugins || [];
+      plugins.push(ChartDataLabels);
+      const canvas = this.shadowRoot
         .querySelector(".mv-chart-canvas")
         .getContext("2d");
-      this.chart = new Chart(container, { type, data, options });
+      this.chart = new Chart(canvas, { type, data, plugins, options });
     }
   }
 }

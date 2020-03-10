@@ -1,5 +1,9 @@
 import { LitElement, html, css } from "lit-element";
+import "mv-container";
+import "conic-gradient";
 import "./mv-chart.js";
+import { BARCHART_CONFIG } from "./barchart-config.js";
+import { DOUGHNUT_CONFIG } from "./doughnut-config.js";
 
 export class MvChartDemo extends LitElement {
   static get properties() {
@@ -34,53 +38,70 @@ export class MvChartDemo extends LitElement {
         font-weight: 500;
         color: red;
       }
+
+      .mv-chart-demo {
+        --mv-chart-margin: auto;
+        --mv-chart-height: 500px;
+        --mv-chart-width: 600px;
+      }
+
+      .main-container {
+        --mv-container-min-width: 1000px;
+      }
+
+      .dashboard-sample {
+        --mv-container-min-width: 950px;
+        --mv-container-padding: 40px;
+      }
+
+      .dashboard-container {
+        display: grid;
+        grid-template-columns: 450px 450px;
+        grid-template-rows: 290px 290px;
+        grid-gap: 0;
+      }
+
+      .doughnut.large {
+        --mv-container-padding: 0 20px;
+        --mv-container-min-width: 400px;
+        --mv-container-max-width: 400px;
+        --mv-container-min-height: 570px;
+      }
+
+      .doughnut.large .gradient-test {
+        --mv-chart-height: 400px;
+        --mv-chart-width: 400px;
+        height: 400px;
+        width: 400px;
+      }
+
+      .doughnut.small {
+        --mv-container-padding: 0 20px;
+        --mv-container-min-width: 200px;
+        --mv-container-max-width: 200px;
+        --mv-container-min-height: 280px;
+        --mv-container-max-height: 280px;
+      }
+
+      .doughnut.small .gradient-test {
+        --mv-chart-height: 200px;
+        --mv-chart-width: 200px;
+        height: 200px;
+        width: 200px;
+      }
+
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: 250px 250px;
+        grid-template-rows: 290px 290px;
+        grid-gap: 0;
+      }
     `;
   }
 
   constructor() {
     super();
     this.theme = "light";
-    this.type = "bar";
-    this.data = {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-      datasets: [
-        {
-          label: "# of Votes",
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)"
-          ],
-          borderColor: [
-            "rgba(255, 99, 132, 1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)"
-          ],
-          borderWidth: 1
-        }
-      ]
-    };
-
-    this.options = {
-      aspectRatio: 1,
-      maintainAspectRatio: false,
-      scales: {
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true
-            }
-          }
-        ]
-      }
-    };
   }
 
   render() {
@@ -105,14 +126,79 @@ export class MvChartDemo extends LitElement {
           />Dark
         </label>
       </fieldset>
-      <div class="mv-chart-demo">
-        <mv-chart
-          .type="${this.type}"
-          .data="${this.data}"
-          .options="${this.options}"
-          .theme="${this.theme}"
-        ></mv-chart>
-      </div>
+      <mv-container class="dashboard-sample" .theme="${this.theme}">
+        <div class="dashboard-container">
+          <div class="dashboard-main">
+            <mv-container class="doughnut large" .theme="${this.theme}">
+              <div class="gradient-test">
+                <h2>Brands</h2>
+                <mv-chart
+                  .type="${DOUGHNUT_CONFIG.type}"
+                  .data="${DOUGHNUT_CONFIG.data}"
+                  .options="${DOUGHNUT_CONFIG.options}"
+                  .theme="${this.theme}"
+                ></mv-chart>
+              </div>
+            </mv-container>
+          </div>
+          <div class="dashboard-grid">
+            <mv-container class="doughnut small" .theme="${this.theme}">
+              <div class="gradient-test">
+                <h3>Brands</h3>
+                <mv-chart
+                  .type="${DOUGHNUT_CONFIG.type}"
+                  .data="${DOUGHNUT_CONFIG.data}"
+                  .options="${DOUGHNUT_CONFIG.options}"
+                  .theme="${this.theme}"
+                ></mv-chart>
+              </div>
+            </mv-container>
+            <mv-container class="doughnut small" .theme="${this.theme}">
+              <div class="gradient-test">
+                <h3>Categories</h3>
+                <mv-chart
+                  .type="${DOUGHNUT_CONFIG.type}"
+                  .data="${DOUGHNUT_CONFIG.data}"
+                  .options="${DOUGHNUT_CONFIG.options}"
+                  .theme="${this.theme}"
+                ></mv-chart>
+              </div>
+            </mv-container>
+            <mv-container class="doughnut small" .theme="${this.theme}">
+              <div class="gradient-test">
+                <h3>Products</h3>
+                <mv-chart
+                  .type="${DOUGHNUT_CONFIG.type}"
+                  .data="${DOUGHNUT_CONFIG.data}"
+                  .options="${DOUGHNUT_CONFIG.options}"
+                  .theme="${this.theme}"
+                ></mv-chart>
+              </div>
+            </mv-container>
+            <mv-container class="doughnut small" .theme="${this.theme}">
+              <div class="gradient-test">
+                <h3>Thematics</h3>
+                <mv-chart
+                  .type="${DOUGHNUT_CONFIG.type}"
+                  .data="${DOUGHNUT_CONFIG.data}"
+                  .options="${DOUGHNUT_CONFIG.options}"
+                  .theme="${this.theme}"
+                ></mv-chart>
+              </div>
+            </mv-container>
+          </div>
+        </div>
+      </mv-container>
+      <mv-container class="main-container" .theme="${this.theme}">
+        <div class="mv-chart-demo">
+          <mv-chart
+            .type="${BARCHART_CONFIG.type}"
+            .data="${BARCHART_CONFIG.data}"
+            .options="${BARCHART_CONFIG.options}"
+            .theme="${this.theme}"
+          ></mv-chart>
+        </div>
+      </mv-container>
     `;
   }
 
