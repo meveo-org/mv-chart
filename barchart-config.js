@@ -1,4 +1,3 @@
-import "conic-gradient";
 export const BARCHART_CONFIG = {
   type: "bar",
   data: {

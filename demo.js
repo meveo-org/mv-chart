@@ -1,6 +1,5 @@
 import { LitElement, html, css } from "lit-element";
 import "mv-container";
-import "conic-gradient";
 import "./mv-chart.js";
 import { BARCHART_CONFIG } from "./barchart-config.js";
 import { DOUGHNUT_CONFIG } from "./doughnut-config.js";
