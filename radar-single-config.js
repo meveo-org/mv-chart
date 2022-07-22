@@ -1,17 +1,22 @@
+
+var reception = [
+  {label:'Politics', value:65}, 
+  {label:'Russia', value:59},
+  {label:'Attack', value:90},
+  {label:'Lawyer', value:81},
+  {label:'Spy', value:56},
+  {label:'Press', value:55}
+];
+
+
+
 export const RADAR_CONFIG = {
   type: 'radar',
   data: {
-  labels: [
-    'Politics '+'65'+' hits',
-    'Russia '+'59'+' hits',
-    'Attack '+'90'+' hits',
-    'Lawyer '+'81'+' hits',
-    'Spy '+'56'+' hits',
-    'Press '+'55'+' hits'
-  ],
+  labels: [ reception[0].label+' '+reception[0].value+' hits',reception[1].label+' '+reception[1].value+' hits',reception[2].label+' '+reception[2].value+' hits',reception[3].label+' '+reception[3].value+' hits',reception[4].label+' '+reception[4].value+' hits',reception[5].label+' '+reception[5].value+' hits'],
   datasets: [{
     label: 'Online Mentions Results',
-    data: [65, 59, 90, 81, 56, 55],
+    data: [ reception[0].value,reception[1].value,reception[2].value,reception[3].value,reception[4].value,reception[5].value],
     fill: true,
     backgroundColor: 'rgba(255, 99, 132, 0)',
     borderColor: 'rgb(255, 99, 132)',
