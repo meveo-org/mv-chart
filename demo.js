@@ -3,6 +3,10 @@ import "mv-container";
 import "./mv-chart.js";
 import { BARCHART_CONFIG } from "./barchart-config.js";
 import { DOUGHNUT_CONFIG } from "./doughnut-config.js";
+import { RADAR_CONFIG } from "./radar-config.js";
+import { RADAR_SINGLE_CONFIG } from "./radar-single-config.js";
+import { BUBBLE_CONFIG } from "./bubble-config.js";
+
 
 export class MvChartDemo extends LitElement {
   static get properties() {
@@ -95,14 +99,25 @@ export class MvChartDemo extends LitElement {
         grid-template-rows: 290px 290px;
         grid-gap: 0;
       }
+
+
+
+
+      .circle1{width:280px;height:280px;margin:auto;background-color:#fff;box-shadow:0px 15px 15px #CCC;border-radius: 50%;position relative !important;margin:auto;top:100px;}
+      .circle2{width:225px;height:225px;margin:auto;background-color:#fff;box-shadow:0px 15px 15px #CCC;border-radius: 50%;position :relative;top:25px;}
+      .circle3{width:125px;height:125px;margin:auto;background-color:#fff;box-shadow:0px 15px 15px #CCC;border-radius: 50%;position :relative;top:45px;}
+    
+
+
+      
     `;
   }
-
+/*
   constructor() {
     super();
     this.theme = "light";
   }
-
+*/
   render() {
     return html`
       <fieldset>
@@ -188,7 +203,11 @@ export class MvChartDemo extends LitElement {
           </div>
         </div>
       </mv-container>
+
       <mv-container class="main-container" .theme="${this.theme}">
+
+      <h2>Bar</h2> 
+
         <div class="mv-chart-demo">
           <mv-chart
             .type="${BARCHART_CONFIG.type}"
@@ -198,6 +217,71 @@ export class MvChartDemo extends LitElement {
           ></mv-chart>
         </div>
       </mv-container>
+      <mv-container class="main-container" .theme="${this.theme}">
+
+      <h2>Radar</h2>
+
+
+      <div class="mv-chart-demo">
+        <mv-chart
+          .type="${RADAR_CONFIG.type}"
+          .data="${RADAR_CONFIG.data}"
+          .options="${RADAR_CONFIG.options}"
+          .theme="${this.theme}"
+        ></mv-chart>
+      </div>
+    </mv-container>
+    <mv-container class="main-container" .theme="${this.theme}">
+
+    <h2>Bubble</h2>
+
+
+    <div class="mv-chart-demo">
+      <mv-chart
+        .type="${BUBBLE_CONFIG.type}"
+        .data="${BUBBLE_CONFIG.data}"
+        .options="${BUBBLE_CONFIG.options}"
+        .theme="${this.theme}"
+      ></mv-chart>
+    </div>
+  </mv-container>
+
+
+
+
+
+
+
+
+  <mv-container class="main-container">
+
+
+  <h2>Radar Single V2</h2>
+
+
+
+  <div class="mv-chart-demo">
+  <div class="circle1" style="position:relative;"><div class="circle2"><div class="circle3"></div></div></div>
+ 
+
+    <mv-chart
+      .type="${RADAR_SINGLE_CONFIG.type}"
+      .data="${RADAR_SINGLE_CONFIG.data}"
+      .options="${RADAR_SINGLE_CONFIG.options}"
+      .theme="${this.theme}"
+   style="display: block;
+   width: 600px;
+   height: 300px;
+   position: relative;
+   bottom: 190px;margin:auto;" ></mv-chart>
+   
+  </div>
+</mv-container>
+
+
+
+
+
     `;
   }
 
