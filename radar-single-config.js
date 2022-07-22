@@ -1,5 +1,4 @@
-export const RADAR_SINGLE_CONFIG = {
-  
+export const RADAR_CONFIG = {
   type: 'radar',
   data: {
   labels: [
@@ -41,7 +40,15 @@ options: {
       drawOnChartArea: false,
       display: false
     }
+  },
+  events: ['click'],
+  onClick:function(e){
+    var activePoints = this.getElementsAtEvent(e);
+    var selectedIndex = activePoints[0]._index;
+    alert(this.data.datasets[0].data[selectedIndex]);
   }
 },
+
 };
+
 
