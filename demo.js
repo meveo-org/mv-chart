@@ -116,7 +116,7 @@ export class MvChartDemo extends LitElement {
       .circle-bubble-2{width:350px;height:350px;margin:auto;background-color:#dce9f2;border-radius: 50%;position :relative;top:15px;}
       .circle-bubble-3{width:300px;height:300px;margin:auto;background-color:#fff;box-shadow:0px 15px 15px #CCC;border-radius: 50%;position :relative;top:25px;}
     
-      .mv-chart-demo{background-color:#dce9f2;}
+      //.mv-chart-demo{background-color:#dce9f2;}
 
 
       
@@ -187,12 +187,12 @@ export class MvChartDemo extends LitElement {
       
     `;
   }
-/*
-  constructor() {
-    super();
-    this.theme = "light";
-  }
-*/
+  /*
+    constructor() {
+      super();
+      this.theme = "light";
+    }
+  */
   render() {
     return html`
       <fieldset>
@@ -327,7 +327,7 @@ export class MvChartDemo extends LitElement {
 
   <mv-container class="main-container" .theme="${this.theme}">
 
-<h2>Donut Single V2</h2>
+<h2>Donut</h2>
 <div class="mv-chart-demo"> 
 <div style="transform: scale(0.5);">
 <div class='social-profile-back-stroke'><div class='social-profile-back'></div></div><div class='social-profile'><div class='social-profile-inner'><span>Social Profiles</span><br/><span class='result'>${DOUGHNUT_SINGLE_CONFIG.result}%</span></div></div>
@@ -350,7 +350,7 @@ export class MvChartDemo extends LitElement {
   <mv-container class="main-container">
 
 
-  <h2>Radar Single V2</h2>
+  <h2>Radar Single</h2>
 
 
 
@@ -388,7 +388,7 @@ export class MvChartDemo extends LitElement {
 <mv-container class="main-container">
 
 
-<h2>Bubble Single V2</h2>
+<h2>Bubble Single</h2>
 
 
 
