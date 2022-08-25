@@ -245,7 +245,35 @@ export class MvChartDemo extends LitElement {
 }
 
 
+.labelindic{position:absolute;left:50%;    z-index: 9999;}
 
+.label1 {
+  top: 158px;
+  margin-left: -21px;
+}
+.label2 {
+    z-index: 9999;
+    margin-left: 120px;
+    margin-top: 135px;
+}
+.label3 {
+    margin-top: 322px;
+    margin-left: 117px;
+}
+.label4 {
+    margin-top: 390px;
+    margin-left: -22px;
+}
+.label5 {
+    margin-top: 320px;
+    margin-left: -167px;
+    text-align: right;
+}
+.label6 {
+    margin-top: 132px;
+    margin-left: -165px;
+    text-align: right;
+}
 
 
 
@@ -395,7 +423,7 @@ export class MvChartDemo extends LitElement {
 <h2>Donut</h2>
 <div class="mv-chart-demo"> 
 <div style="transform: scale(0.5);">
-<div class='social-profile-back-stroke'><div class='social-profile-back'></div></div><div class='social-profile'><div class='social-profile-inner'><img src="web_modules/mv-chart/img/donut-img.svg"/><br/><span class="title">Social Profiles</span><br/><span class='result'>${DOUGHNUT_SINGLE_CONFIG.result}%</span></div></div>
+<div class='social-profile-back-stroke'><div class='social-profile-back'></div></div><div class='social-profile'><div class='social-profile-inner'><img src="web_modules/mv-chart/img/donut-img.svg"/><br/><span class="title">Brands</span><br/><span class='result'>${DOUGHNUT_SINGLE_CONFIG.result}%</span></div></div>
 
 <span class="result1 resultats"><span>${DOUGHNUT_SINGLE_CONFIG.data.names[0]}</span>
 <br/><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[0]}%</strong></span>
@@ -425,6 +453,16 @@ export class MvChartDemo extends LitElement {
 
 
   <div class="mv-chart-demo">
+
+
+<div class="label1 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[0]} hits</div>
+<div class="label2 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[1]} hits</div>
+<div class="label3 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[2]} hits</div>
+<div class="label4 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[3]} hits</div>
+<div class="label5 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[4]} hits</div>
+<div class="label6 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[5]} hits</div>
+
+
   <div class="circle1" style="position:relative;"><div class="circle2"><div class="circle3"></div></div></div>
  
 
@@ -454,7 +492,7 @@ export class MvChartDemo extends LitElement {
 
 
 
-
+<!--
 <mv-container class="main-container">
 
 
@@ -492,7 +530,7 @@ export class MvChartDemo extends LitElement {
 
 
 </mv-container>
-
+  -->
 
 
 

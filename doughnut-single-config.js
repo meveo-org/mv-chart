@@ -8,8 +8,8 @@ export const DOUGHNUT_SINGLE_CONFIG = {
       'white'
     ],
     names: [
-      'Pinterest',
-      'Instagram',
+      'Apple',
+      'Windows',
       'total'
     ],
     datasets: [{

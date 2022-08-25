@@ -2,16 +2,16 @@ export const RADAR_SINGLE_CONFIG = {
   type: 'radar',
   data: {
   labels: [
-    'Politics',
-    'Russia',
-    'Attack',
-    'Lawyer',
-    'Spy',
+    'Android',
+    'Apple',
+    'Microsoft',
+    'Facebook',
+    'Instagram',
     'Press'
   ],
   datasets: [{
     data: [65, 59, 90, 81, 56, 55],
-    fill: false,
+    fill: true,
     backgroundColor: 'rgba(255, 99, 132, 0)',
     borderColor: 'rgb(255, 99, 132)',
     pointBackgroundColor: 'rgb(255, 255, 255)',
