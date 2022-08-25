@@ -107,7 +107,16 @@ export class MvChartDemo extends LitElement {
 
       .circle1{width:280px;height:280px;margin:auto;background-color:#fff;box-shadow:0px 15px 15px #CCC;border-radius: 50%;position :relative !important;margin:auto;top:100px;}
       .circle2{width:225px;height:225px;margin:auto;background-color:#fff;box-shadow:0px 15px 15px #CCC;border-radius: 50%;position :relative;top:25px;}
-      .circle3{width:125px;height:125px;margin:auto;background-color:#fff;box-shadow:0px 15px 15px #CCC;border-radius: 50%;position :relative;top:45px;}
+      .circle3 {
+    width: 155px;
+    height: 155px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(204 204 204) 0px 15px 15px;
+    border-radius: 50%;
+    position: relative;
+    top: 35px;
+}
     
 
 
@@ -143,7 +152,7 @@ export class MvChartDemo extends LitElement {
   z-index: 9991;
   color:#fff;
   text-align : center;
-  line-height:130px;
+
   font-weight:bold;
   box-shadow: 0px 10px 10px #ccc;
 }
@@ -153,7 +162,7 @@ export class MvChartDemo extends LitElement {
 .social-profile-back {
   width: 600px;
   height: 600px;
-  background-color: rgb(255, 255, 255);
+  background-color: #DCE9F2;
   border-radius: 50%;
   position: absolute;
   left: 50%;
@@ -178,10 +187,66 @@ export class MvChartDemo extends LitElement {
 
 
 
-.social-profile-inner span{font-size:30px;line-height:125px;}
+.social-profile-inner span:first-child {
+    font-size: 30px;
+
+    position: relative;
+    top: 70px;
+}
 
 
 .social-profile-inner .result {font-size:150px;}
+
+
+
+.resultats {
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    font-size: 60px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    top: 155px;
+    background-color: #fff;
+}
+
+    .result1{ position: absolute;
+    right: 0;border: 15px solid #FE793F;}
+
+    .result2{ position: absolute;
+    left: 0;border: 15px solid #F03E5E;}
+
+    .resultats span {font-size:20px;}
+    .resultats strong {position:relative;bottom:30px;}
+
+
+.result{
+    font-size: 100px;
+    width: 150px;
+    height: 150px;
+    text-align: center;}
+    
+
+
+
+
+.social-profile-inner .title {
+    font-size: 40px;
+    position: relative;
+    top: 50px;
+}
+
+
+.social-profile-inner img {
+    width: 100px;
+    position: relative;
+    top: 40px;
+}
+
+
+
+
 
 
       
@@ -330,7 +395,12 @@ export class MvChartDemo extends LitElement {
 <h2>Donut</h2>
 <div class="mv-chart-demo"> 
 <div style="transform: scale(0.5);">
-<div class='social-profile-back-stroke'><div class='social-profile-back'></div></div><div class='social-profile'><div class='social-profile-inner'><span>Social Profiles</span><br/><span class='result'>${DOUGHNUT_SINGLE_CONFIG.result}%</span></div></div>
+<div class='social-profile-back-stroke'><div class='social-profile-back'></div></div><div class='social-profile'><div class='social-profile-inner'><img src="web_modules/mv-chart/img/donut-img.svg"/><br/><span class="title">Social Profiles</span><br/><span class='result'>${DOUGHNUT_SINGLE_CONFIG.result}%</span></div></div>
+
+<span class="result1 resultats"><span>${DOUGHNUT_SINGLE_CONFIG.data.names[0]}</span>
+<br/><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[0]}%</strong></span>
+<span class="result2 resultats"><span>${DOUGHNUT_SINGLE_CONFIG.data.names[1]}</span>
+<br/><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[1]}%</strong></span>
 
 
           <mv-chart

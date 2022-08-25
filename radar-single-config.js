@@ -2,12 +2,12 @@ export const RADAR_SINGLE_CONFIG = {
   type: 'radar',
   data: {
   labels: [
-    'Politics '+'65'+' hits',
-    'Russia '+'59'+' hits',
-    'Attack '+'90'+' hits',
-    'Lawyer '+'81'+' hits',
-    'Spy '+'56'+' hits',
-    'Press '+'55'+' hits'
+    'Politics',
+    'Russia',
+    'Attack',
+    'Lawyer',
+    'Spy',
+    'Press'
   ],
   datasets: [{
     data: [65, 59, 90, 81, 56, 55],
@@ -17,12 +17,14 @@ export const RADAR_SINGLE_CONFIG = {
     pointBackgroundColor: 'rgb(255, 255, 255)',
     pointBorderColor: 'black',
     pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgb(255, 99, 132)'
+    pointHoverBorderColor: 'rgb(255, 99, 132)',
+    
   }]
 },
 options: {
   legend: {
     display: false,
+    title:false,
   },
  
   gridLines: {
@@ -39,7 +41,12 @@ options: {
       drawOnChartArea: false,
       display: false
     }
-  }
+  },
+   elements: {
+      line: {
+        borderWidth: 3
+      }
+    }
 },
 };
 

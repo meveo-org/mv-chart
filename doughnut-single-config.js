@@ -7,6 +7,11 @@ export const DOUGHNUT_SINGLE_CONFIG = {
       'Red',
       'white'
     ],
+    names: [
+      'Pinterest',
+      'Instagram',
+      'total'
+    ],
     datasets: [{
       label: 'My First Dataset',
       data: [60, 20,20],
