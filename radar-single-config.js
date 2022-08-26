@@ -22,9 +22,17 @@ export const RADAR_SINGLE_CONFIG = {
   }]
 },
 options: {
-  legend: {
+    legend: {
     display: false,
     title:false,
+      labels: {
+        usePointStyle: true,
+      },
+
+    
+  },
+  tooltips: {
+    enabled: false,
   },
  
   gridLines: {
@@ -40,8 +48,22 @@ options: {
      gridLines: {
       drawOnChartArea: false,
       display: false
+    },
+    pointLabel:{
+      display:false
     }
   },
+  plugins: {
+    datalabels: {
+        anchor: 'end',
+        align: 'top',
+        formatter: Math.round,
+        font: {
+            weight: 'bold'
+        },
+        display:false
+    }
+},
    elements: {
       line: {
         borderWidth: 3
