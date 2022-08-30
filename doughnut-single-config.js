@@ -2,27 +2,38 @@ export const DOUGHNUT_SINGLE_CONFIG = {
   type: "doughnut",
   result:"80",
   data: {
-    labels: [
-      'Orange',
-      'Red',
-      'white'
-    ],
+   
     names: [
       'Apple',
       'Windows',
-      'total'
+      'Nokia',
+      'Huawai',
+      'Android',
+      'linux'
     ],
     datasets: [{
-      label: 'My First Dataset',
-      data: [60, 20,20],
+      label: 'Donut',
+      data: [30, 10,15,5,20,20],
       backgroundColor: [
         '#f79604',
         '#ed301e',
-        '#fff'
+        '#36ea1e',
+        '#e5db20',
+        '#1fb8e2',
+        '#cc18e0'
+      ],
+      links : [
+        'http://apple.com',
+        'http://microsoft.com',
+        'http://nokia.com',
+        'http://huawai.com',
+        'http://google.com',
+        'http://linux.org'
+
       ],
       hoverOffset: 4,
       doughnut:{
-        borderWidth:10
+        borderWidth:100
       }
     }]
   },

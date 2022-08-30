@@ -9,8 +9,16 @@ export const RADAR_SINGLE_CONFIG = {
     'Instagram',
     'Press'
   ],
+  links: [
+    'http://google.com',
+    'http://apple.com',
+    '',
+    'http://facebook.com',
+    'http://instagram.com',
+    'http://lemonde.fr'
+  ],
   datasets: [{
-    data: [65, 59, 90, 81, 56, 55],
+    data: [10, 30, 20, 40, 50, 100],
     fill: true,
     backgroundColor: 'rgba(255, 99, 132, 0)',
     borderColor: 'rgb(255, 99, 132)',
@@ -69,6 +77,6 @@ options: {
         borderWidth: 3
       }
     }
-},
+}
 };
 

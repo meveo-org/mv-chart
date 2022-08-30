@@ -9,11 +9,10 @@ import { RADAR_SINGLE_CONFIG } from "./radar-single-config.js";
 import { BUBBLE_SINGLE_CONFIG } from "./bubble-single-config.js";
 import { DOUGHNUT_SINGLE_CONFIG } from "./doughnut-single-config.js";
 
-
 export class MvChartDemo extends LitElement {
   static get properties() {
     return {
-      theme: { type: String, attribute: true }
+      theme: { type: String, attribute: true },
     };
   }
 
@@ -102,182 +101,224 @@ export class MvChartDemo extends LitElement {
         grid-gap: 0;
       }
 
-
-
-
-      .circle1{width:280px;height:280px;margin:auto;background-color:#fff;box-shadow:0px 15px 15px #CCC;border-radius: 50%;position :relative !important;margin:auto;top:100px;}
-      .circle2{width:225px;height:225px;margin:auto;background-color:#fff;box-shadow:0px 15px 15px #CCC;border-radius: 50%;position :relative;top:25px;}
+      .circle1 {
+        width: 280px;
+        height: 280px;
+        margin: auto;
+        background-color: #fff;
+        box-shadow: 0px 15px 15px #ccc;
+        border-radius: 50%;
+        position: relative !important;
+        margin: auto;
+        top: 100px;
+      }
+      .circle2 {
+        width: 225px;
+        height: 225px;
+        margin: auto;
+        background-color: #fff;
+        box-shadow: 0px 15px 15px #ccc;
+        border-radius: 50%;
+        position: relative;
+        top: 25px;
+      }
       .circle3 {
-    width: 155px;
-    height: 155px;
-    margin: auto;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgb(204 204 204) 0px 15px 15px;
-    border-radius: 50%;
-    position: relative;
-    top: 35px;
-}
-    
+        width: 155px;
+        height: 155px;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgb(204 204 204) 0px 15px 15px;
+        border-radius: 50%;
+        position: relative;
+        top: 35px;
+      }
+
+      .circle-bubble-1 {
+        width: 380px;
+        height: 380px;
+        margin: auto;
+        background-color: #c0e0e5;
+        border-radius: 50%;
+        position: relative !important;
+        margin: auto;
+        top: 100px;
+      }
+      .circle-bubble-2 {
+        width: 350px;
+        height: 350px;
+        margin: auto;
+        background-color: #dce9f2;
+        border-radius: 50%;
+        position: relative;
+        top: 15px;
+      }
+      .circle-bubble-3 {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        background-color: #fff;
+        box-shadow: 0px 15px 15px #ccc;
+        border-radius: 50%;
+        position: relative;
+        top: 25px;
+      }
+
+      .social-profile {
+        width: 450px;
+        height: 450px;
+        background-color: #dce9f2;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        margin-left: -225px;
+        top: 25px;
+        z-index: 999;
+      }
+      .social-profile-inner {
+        width: 400px;
+        height: 400px;
+        background-color: rgb(69, 141, 183);
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        margin-left: -199px;
+        top: 25px;
+        z-index: 9991;
+        color: #fff;
+        text-align: center;
+
+        font-weight: bold;
+        box-shadow: 0px 10px 10px #ccc;
+      }
+
+      .social-profile-back {
+        width: 600px;
+        height: 600px;
+        background-color: #dce9f2;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        margin-left: -300px;
+        top: 45px;
+        z-index: 0;
+        box-shadow: 0px 10px 10px #ccc;
+      }
+
+      .social-profile-back-stroke {
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        margin-left: -350px;
+        top: -100px;
+        z-index: 0;
+        box-shadow: rgb(204 204 204) 0px 10px 10px;
+        border: 5px solid rgb(204, 204, 204);
+      }
+
+      .social-profile-inner span:first-child {
+        font-size: 30px;
+
+        position: relative;
+        top: 70px;
+      }
+
+      .social-profile-inner .result {
+        font-size: 150px;
+      }
+
+      .resultats {
+        border-radius: 50%;
+        position: absolute;
+        right: 0px;
+        font-size: 60px;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        top: 155px;
+        background-color: #fff;
+        color: #000;
+        text-decoration: none;
+      }
+
+      .resultats > span > span {
+        font-size: 20px;
+      }
+      .resultats > span > strong {
+        position: relative;
+        bottom: 30px;
+      }
+
+      .result {
+        font-size: 100px;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+      }
+      .result1{right:145px !important;}
+      .result2{top: 165px !important; right: 0px  !important; }
+      .result3{right:145px !important;top: 500px !important;}
+      .result4{left:145px !important;top: 500px !important;}
+      .result5{top: 165px !important; left: 0px  !important; }
+      .result6{left:145px !important;}
 
 
 
-      .circle-bubble-1{width:380px;height:380px;margin:auto;background-color:#c0e0e5;border-radius: 50%;position: relative !important;margin:auto;top:100px;}
-      .circle-bubble-2{width:350px;height:350px;margin:auto;background-color:#dce9f2;border-radius: 50%;position :relative;top:15px;}
-      .circle-bubble-3{width:300px;height:300px;margin:auto;background-color:#fff;box-shadow:0px 15px 15px #CCC;border-radius: 50%;position :relative;top:25px;}
-    
-      //.mv-chart-demo{background-color:#dce9f2;}
+      .resultats a {
+        color: #000;
+      }
+      .resultats:hover{background-color:#DCE9F2;border-color:#fff !important;box-shadow:20px 20px 20px #333  !important;}
 
+      .social-profile-inner .title {
+        font-size: 40px;
+        position: relative;
+        top: 50px;
+      }
 
-      
-.social-profile {
-  width: 450px;
-  height: 450px;
-  background-color: #DCE9F2;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  margin-left: -225px;
-  top: 25px;
-  z-index: 999;
-}
-.social-profile-inner {
-  width: 400px;
-  height: 400px;
-  background-color: rgb(69, 141, 183);
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  margin-left: -199px;
-  top: 25px;
-  z-index: 9991;
-  color:#fff;
-  text-align : center;
+      .social-profile-inner img {
+        width: 100px;
+        position: relative;
+        top: 40px;
+      }
 
-  font-weight:bold;
-  box-shadow: 0px 10px 10px #ccc;
-}
+      .labelindic {
+        position: absolute;
+        left: 50%;
+        z-index: 9999;
+      }
+      .labelindic a {
+        color: #000;
+        text-decoration: none;
+      }
 
-
-
-.social-profile-back {
-  width: 600px;
-  height: 600px;
-  background-color: #DCE9F2;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  margin-left: -300px;
-  top: 45px;
-  z-index: 0;
-  box-shadow: 0px 10px 10px #ccc;
-}
-
-.social-profile-back-stroke {
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  margin-left: -350px;
-  top: -100px;
-  z-index: 0;
-  box-shadow: rgb(204 204 204) 0px 10px 10px;
-  border: 5px solid rgb(204, 204, 204);
-}
-
-
-
-.social-profile-inner span:first-child {
-    font-size: 30px;
-
-    position: relative;
-    top: 70px;
-}
-
-
-.social-profile-inner .result {font-size:150px;}
-
-
-
-.resultats {
-    border-radius: 50%;
-    position: absolute;
-    right: 0px;
-    font-size: 60px;
-    width: 150px;
-    height: 150px;
-    text-align: center;
-    top: 155px;
-    background-color: #fff;
-}
-
-    .result1{ position: absolute;
-    right: 0;border: 15px solid #FE793F;}
-
-    .result2{ position: absolute;
-    left: 0;border: 15px solid #F03E5E;}
-
-    .resultats span {font-size:20px;}
-    .resultats strong {position:relative;bottom:30px;}
-
-
-.result{
-    font-size: 100px;
-    width: 150px;
-    height: 150px;
-    text-align: center;}
-    
-
-
-
-
-.social-profile-inner .title {
-    font-size: 40px;
-    position: relative;
-    top: 50px;
-}
-
-
-.social-profile-inner img {
-    width: 100px;
-    position: relative;
-    top: 40px;
-}
-
-
-.labelindic{position:absolute;left:50%;    z-index: 9999;}
-
-.label1 {
-  top: 158px;
-  margin-left: -21px;
-}
-.label2 {
-    z-index: 9999;
-    margin-left: 120px;
-    margin-top: 135px;
-}
-.label3 {
-    margin-top: 322px;
-    margin-left: 117px;
-}
-.label4 {
-    margin-top: 390px;
-    margin-left: -22px;
-}
-.label5 {
-    margin-top: 320px;
-    margin-left: -167px;
-    text-align: right;
-}
-.label6 {
-    margin-top: 132px;
-    margin-left: -165px;
-    text-align: right;
-}
-
-
-
-      
+      .label1 {
+        top: 158px;
+        margin-left: -21px;
+      }
+      .label2 {
+        z-index: 9999;
+        margin-left: 120px;
+        margin-top: 135px;
+      }
+      .label3 {
+        margin-top: 322px;
+        margin-left: 117px;
+      }
+      .label4 {
+        margin-top: 390px;
+        margin-left: -22px;
+      }
+      .label5 {
+        margin-top: 320px;
+        margin-left: -167px;
+        text-align: right;
+      }
+      .label6 {
+        margin-top: 132px;
+        margin-left: -165px;
+        text-align: right;
+      }
     `;
   }
   /*
@@ -286,6 +327,12 @@ export class MvChartDemo extends LitElement {
       this.theme = "light";
     }
   */
+
+  firstUpdated(){
+
+
+    
+  }
   render() {
     return html`
       <fieldset>
@@ -373,8 +420,7 @@ export class MvChartDemo extends LitElement {
       </mv-container>
 
       <mv-container class="main-container" .theme="${this.theme}">
-
-      <h2>Bar</h2> 
+        <h2>Bar</h2>
 
         <div class="mv-chart-demo">
           <mv-chart
@@ -386,168 +432,137 @@ export class MvChartDemo extends LitElement {
         </div>
       </mv-container>
       <mv-container class="main-container" .theme="${this.theme}">
+        <h2>Radar</h2>
 
-      <h2>Radar</h2>
-
-
-      <div class="mv-chart-demo">
-        <mv-chart
-          .type="${RADAR_CONFIG.type}"
-          .data="${RADAR_CONFIG.data}"
-          .options="${RADAR_CONFIG.options}"
-          .theme="${this.theme}"
-        ></mv-chart>
-      </div>
-    </mv-container>
-    <mv-container class="main-container" .theme="${this.theme}">
-
-    <h2>Bubble</h2>
-
-
-    <div class="mv-chart-demo">
-      <mv-chart
-        .type="${BUBBLE_CONFIG.type}"
-        .data="${BUBBLE_CONFIG.data}"
-        .options="${BUBBLE_CONFIG.options}"
-        .theme="${this.theme}"
-      ></mv-chart>
-    </div>
-  </mv-container>
-
-
-
-
-
-  <mv-container class="main-container" .theme="${this.theme}">
-
-<h2>Donut</h2>
-<div class="mv-chart-demo"> 
-<div style="transform: scale(0.5);">
-<div class='social-profile-back-stroke'><div class='social-profile-back'></div></div><div class='social-profile'><div class='social-profile-inner'><img src="web_modules/mv-chart/img/donut-img.svg"/><br/><span class="title">Brands</span><br/><span class='result'>${DOUGHNUT_SINGLE_CONFIG.result}%</span></div></div>
-
-<span class="result1 resultats"><span>${DOUGHNUT_SINGLE_CONFIG.data.names[0]}</span>
-<br/><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[0]}%</strong></span>
-<span class="result2 resultats"><span>${DOUGHNUT_SINGLE_CONFIG.data.names[1]}</span>
-<br/><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[1]}%</strong></span>
-
-
+        <div class="mv-chart-demo">
           <mv-chart
-            .type="${DOUGHNUT_SINGLE_CONFIG.type}"
-            .data="${DOUGHNUT_SINGLE_CONFIG.data}"
-            .options="${DOUGHNUT_SINGLE_CONFIG.options}"
+            .type="${RADAR_CONFIG.type}"
+            .data="${RADAR_CONFIG.data}"
+            .options="${RADAR_CONFIG.options}"
             .theme="${this.theme}"
           ></mv-chart>
         </div>
+      </mv-container>
+      <mv-container class="main-container" .theme="${this.theme}">
+        <h2>Bubble</h2>
 
+        <div class="mv-chart-demo">
+          <mv-chart
+            .type="${BUBBLE_CONFIG.type}"
+            .data="${BUBBLE_CONFIG.data}"
+            .options="${BUBBLE_CONFIG.options}"
+            .theme="${this.theme}"
+          ></mv-chart>
         </div>
-
       </mv-container>
 
+      <mv-container class="main-container" .theme="${this.theme}">
+        <h2>Donut Single</h2>
+        <div class="mv-chart-demo">
+          <div style="transform: scale(0.5);">
+            <div class="social-profile-back-stroke">
+              <div class="social-profile-back"></div>
+            </div>
+            <div class="social-profile">
+              <div class="social-profile-inner">
+                <img src="web_modules/mv-chart/img/donut-img.svg" /><br /><span
+                  class="title"
+                  >Brands</span
+                ><br /><span class="result"
+                  >${DOUGHNUT_SINGLE_CONFIG.result}</span
+                >
+              </div>
+            </div>
 
 
-  <mv-container class="main-container">
-
-
-  <h2>Radar Single</h2>
 
 
 
-  <div class="mv-chart-demo">
+
+${this.displayDonutBubbles()}
 
 
-<div class="label1 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[0]} hits</div>
-<div class="label2 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[1]} hits</div>
-<div class="label3 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[2]} hits</div>
-<div class="label4 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[3]} hits</div>
-<div class="label5 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[4]} hits</div>
-<div class="label6 labelindic">${RADAR_SINGLE_CONFIG.data.datasets[0].data[5]} hits</div>
 
 
-  <div class="circle1" style="position:relative;"><div class="circle2"><div class="circle3"></div></div></div>
- 
+            <mv-chart
+              .type="${DOUGHNUT_SINGLE_CONFIG.type}"
+              .data="${DOUGHNUT_SINGLE_CONFIG.data}"
+              .options="${DOUGHNUT_SINGLE_CONFIG.options}"
+              .theme="${this.theme}"
+            ></mv-chart>
+          </div>
+        </div>
+      </mv-container>
 
-    <mv-chart
-      .type="${RADAR_SINGLE_CONFIG.type}"
-      .data="${RADAR_SINGLE_CONFIG.data}"
-      .options="${RADAR_SINGLE_CONFIG.options}"
-      .theme="${this.theme}"
-   style="display: block;
+      <mv-container class="main-container">
+        <h2>Radar Single</h2>
+        <div class="mv-chart-demo">
+
+
+        ${this.displayRadarHits()}
+
+          <div class="circle1" style="position:relative;">
+            <div class="circle2"><div class="circle3"></div></div>
+          </div>
+
+          <mv-chart
+            .type="${RADAR_SINGLE_CONFIG.type}"
+            .data="${RADAR_SINGLE_CONFIG.data}"
+            .options="${RADAR_SINGLE_CONFIG.options}"
+            .theme="${this.theme}"
+            style="display: block;
    width: 600px;
    height: 300px;
    position: relative;
-   bottom: 190px;margin:auto;" ></mv-chart>
-   
-  </div>
-</mv-container>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<mv-container class="main-container">
-
-
-<h2>Bubble Single</h2>
-
-
-
-<div class="mv-chart-demo">
-    <div class="circle-bubble-1" style="position:relative;"><div class="circle-bubble-2"><div class="circle-bubble-3"></div></div></div>
-   
-   
-    <div class="canvas-cache">
-
-
-  <mv-chart
-    .type="${BUBBLE_SINGLE_CONFIG.type}"
-    .data="${BUBBLE_SINGLE_CONFIG.data}"
-    .options="${BUBBLE_SINGLE_CONFIG.options}"
-    .theme="${this.theme}"
- style="display: block;
- width: 600px;
- height: 300px;
- position: relative;
- bottom: 190px;margin:auto;" ></mv-chart>
- 
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-
-</mv-container>
-  -->
-
-
-
-
-
-
-
-
+   bottom: 190px;margin:auto;"
+          ></mv-chart>
+        </div>
+      </mv-container>
     `;
   }
 
-  changeTheme = originalEvent => {
+  changeTheme = (originalEvent) => {
     const {
-      target: { value }
+      target: { value },
     } = originalEvent;
     this.theme = value;
   };
+
+
+  displayDonutBubbles(){
+    let i;
+    let loop = new Array();
+    let max = DOUGHNUT_SINGLE_CONFIG.data.names.length;
+    for (i=0;i<max;i++){
+  
+    loop[i] = html `<a href="${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i]}" target="_blank"  class="result${i+1} resultats"  style="border:solid 15px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};top:-155px;right:215px;"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]}</strong></span></a>`;   
+    }
+    return  loop;
+  }
+
+
+  displayRadarHits(){
+    let i;
+    let loop = new Array();
+    let max = RADAR_SINGLE_CONFIG.data.datasets[0].data.length;
+    for (i=0;i<max;i++){
+
+      loop[i] = html `
+    <div class="label${i+1} labelindic">
+      <a href="${RADAR_SINGLE_CONFIG.data.links[i]}" target="_blank"
+        >${RADAR_SINGLE_CONFIG.data.datasets[0].data[i]} hits</a
+      >
+    </div>`;   
+    }
+    return loop;
+
+
+
+  }
 }
+
+
+
+
 
 customElements.define("mv-chart-demo", MvChartDemo);
