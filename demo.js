@@ -518,6 +518,18 @@ ${this.displayDonutBubbles()}
           ></mv-chart>
         </div>
       </mv-container>
+
+
+
+
+      <mv-container class="main-container" .theme="${this.theme}">
+      <h2>Bubble Single</h2>
+        <mv-chart-bubble></mv-chart-bubble>
+      </mv-container>
+
+
+
+      
     `;
   }
 
