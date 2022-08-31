@@ -272,8 +272,15 @@ class MvChartBubble extends LitElement {
     
       const gradiant = clip
         .append("circle")
+        .attr("style","filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 1));")
+        .style('opacity',"0")
     
-        .attr("r", (d) => d.r);
+        .attr("r", (d) => d.r)
+        
+
+        gradiant.transition()
+        .duration(2000)
+    .style("opacity", "1");;
     
       gradiant.each(function (p, j) {
         d3.select(this).attr("fill", "url(#Gradient" + (j % 5) + ")");

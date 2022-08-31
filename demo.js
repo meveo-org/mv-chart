@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 import "mv-container";
 import "./mv-chart.js";
+import "./bubblechart/src/js/mv-chart.js";
 import { BARCHART_CONFIG } from "./barchart-config.js";
 import { DOUGHNUT_CONFIG } from "./doughnut-config.js";
 import { RADAR_CONFIG } from "./radar-config.js";
@@ -101,6 +102,9 @@ export class MvChartDemo extends LitElement {
         grid-gap: 0;
       }
 
+
+
+        /*radar chart*/
       .circle1 {
         width: 280px;
         height: 280px;
@@ -117,7 +121,7 @@ export class MvChartDemo extends LitElement {
         height: 225px;
         margin: auto;
         background-color: #fff;
-        box-shadow: 0px 15px 15px #ccc;
+        box-shadow: 0px 10px 10px #ccc;
         border-radius: 50%;
         position: relative;
         top: 25px;
@@ -132,6 +136,52 @@ export class MvChartDemo extends LitElement {
         position: relative;
         top: 35px;
       }
+
+      .labelindic {
+        position: absolute;
+        left: 50%;
+        z-index: 9999;
+      }
+      .labelindic a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .label1 {
+        top: 158px;
+        margin-left: -21px;
+      }
+      .label2 {
+        z-index: 9999;
+        margin-left: 120px;
+        margin-top: 135px;
+      }
+      .label3 {
+        margin-top: 322px;
+        margin-left: 117px;
+      }
+      .label4 {
+        margin-top: 390px;
+        margin-left: -22px;
+      }
+      .label5 {
+        margin-top: 320px;
+        margin-left: -167px;
+        text-align: right;
+      }
+      .label6 {
+        margin-top: 132px;
+        margin-left: -165px;
+        text-align: right;
+      }
+
+
+
+
+
+        /*donut chart*/
+
+
 
       .circle-bubble-1 {
         width: 380px;
@@ -162,6 +212,11 @@ export class MvChartDemo extends LitElement {
         position: relative;
         top: 25px;
       }
+
+
+
+
+
 
       .social-profile {
         width: 450px;
@@ -240,7 +295,10 @@ export class MvChartDemo extends LitElement {
         background-color: #fff;
         color: #000;
         text-decoration: none;
+        
       }
+
+
 
       .resultats > span > span {
         font-size: 20px;
@@ -256,19 +314,53 @@ export class MvChartDemo extends LitElement {
         height: 150px;
         text-align: center;
       }
-      .result1{right:145px !important;}
-      .result2{top: 165px !important; right: 0px  !important; }
-      .result3{right:145px !important;top: 500px !important;}
-      .result4{left:145px !important;top: 500px !important;}
-      .result5{top: 165px !important; left: 0px  !important; }
-      .result6{left:145px !important;}
+
+/*disposition des bulles*/
+      .result-1-1{top: 165px !important; right: 0px  !important;animation: fadein 1s; }
+
+      .result-1-2{top: 165px !important; right: 0px  !important;animation: fadein 1s; }
+      .result-2-2{top: 165px !important; left: 0px  !important; animation: fadein 4s;}
+
+      .result-1-3{top: 165px !important; right: 0px  !important;animation: fadein 1s; }
+      .result-2-3{left:145px !important;top: 500px !important;animation: fadein 3s;}
+      .result-3-3{left:145px !important;top:-145px;animation: fadein 5s;}
 
 
 
+      .result-1-4{right:145px !important;top:-145px;animation: fadein 0s;}
+      .result-2-4{right:145px !important;top: 500px !important;animation: fadein 2s;}
+      .result-3-4{left:145px !important;top: 500px !important;animation: fadein 3s;}
+      .result-4-4{left:145px !important;top:-145px;animation: fadein 5s;}
+
+      .result-1-5{right:145px !important;top:-145px;animation: fadein 0s;}
+      .result-2-5{top: 165px !important; right: 0px  !important;animation: fadein 1s; }
+      .result-3-5{right:145px !important;top: 500px !important;animation: fadein 2s;}
+      .result-4-5{left:145px !important;top: 500px !important;animation: fadein 3s;}
+      .result-5-5{top: 165px !important; left: 0px  !important; animation: fadein 4s;}
+
+
+      .result-1-6{right:145px !important;top:-145px;animation: fadein 0s;}
+      .result-2-6{top: 165px !important; right: 0px  !important;animation: fadein 1s; }
+      .result-3-6{right:145px !important;top: 500px !important;animation: fadein 2s;}
+      .result-4-6{left:145px !important;top: 500px !important;animation: fadein 3s;}
+      .result-5-6{top: 165px !important; left: 0px  !important; animation: fadein 4s;}
+      .result-6-6{left:145px !important;top:-145px;animation: fadein 5s;}
+
+
+
+
+      @keyframes fadein {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+      }
       .resultats a {
         color: #000;
       }
-      .resultats:hover{background-color:#DCE9F2;border-color:#fff !important;box-shadow:20px 20px 20px #333  !important;}
+      .resultats:hover{background-color:#DCE9F2;border-color:#fff !important;box-shadow:0px 5px 5px #333  !important;}
 
       .social-profile-inner .title {
         font-size: 40px;
@@ -282,43 +374,10 @@ export class MvChartDemo extends LitElement {
         top: 40px;
       }
 
-      .labelindic {
-        position: absolute;
-        left: 50%;
-        z-index: 9999;
-      }
-      .labelindic a {
-        color: #000;
-        text-decoration: none;
-      }
 
-      .label1 {
-        top: 158px;
-        margin-left: -21px;
-      }
-      .label2 {
-        z-index: 9999;
-        margin-left: 120px;
-        margin-top: 135px;
-      }
-      .label3 {
-        margin-top: 322px;
-        margin-left: 117px;
-      }
-      .label4 {
-        margin-top: 390px;
-        margin-left: -22px;
-      }
-      .label5 {
-        margin-top: 320px;
-        margin-left: -167px;
-        text-align: right;
-      }
-      .label6 {
-        margin-top: 132px;
-        margin-left: -165px;
-        text-align: right;
-      }
+
+
+
     `;
   }
   /*
@@ -355,7 +414,7 @@ export class MvChartDemo extends LitElement {
           />Dark
         </label>
       </fieldset>
-      <mv-container class="dashboard-sample" .theme="${this.theme}">
+   <!--   <mv-container class="dashboard-sample" .theme="${this.theme}">
         <div class="dashboard-container">
           <div class="dashboard-main">
             <mv-container class="doughnut large" .theme="${this.theme}">
@@ -454,7 +513,7 @@ export class MvChartDemo extends LitElement {
             .theme="${this.theme}"
           ></mv-chart>
         </div>
-      </mv-container>
+      </mv-container>-->
 
       <mv-container class="main-container" .theme="${this.theme}">
         <h2>Donut Single</h2>
@@ -474,17 +533,9 @@ export class MvChartDemo extends LitElement {
               </div>
             </div>
 
-
-
-
-
-
 ${this.displayDonutBubbles()}
 
-
-
-
-            <mv-chart
+      <mv-chart
               .type="${DOUGHNUT_SINGLE_CONFIG.type}"
               .data="${DOUGHNUT_SINGLE_CONFIG.data}"
               .options="${DOUGHNUT_SINGLE_CONFIG.options}"
@@ -498,8 +549,7 @@ ${this.displayDonutBubbles()}
         <h2>Radar Single</h2>
         <div class="mv-chart-demo">
 
-
-        ${this.displayRadarHits()}
+${this.displayRadarHits()}
 
           <div class="circle1" style="position:relative;">
             <div class="circle2"><div class="circle3"></div></div>
@@ -544,10 +594,17 @@ ${this.displayDonutBubbles()}
   displayDonutBubbles(){
     let i;
     let loop = new Array();
-    let max = DOUGHNUT_SINGLE_CONFIG.data.names.length;
+
+    let max = DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data.length;
     for (i=0;i<max;i++){
-  
-    loop[i] = html `<a href="${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i]}" target="_blank"  class="result${i+1} resultats"  style="border:solid 15px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};top:-155px;right:215px;"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]}</strong></span></a>`;   
+      
+
+      if (DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]){
+    loop[i] = html `<a href="${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i]}" target="_blank"  class="result-${i+1}-${max} resultats pos"  style="border:solid 10px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]}</strong></span></a>`; 
+    
+     }
+
+
     }
     return  loop;
   }
