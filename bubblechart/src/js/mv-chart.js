@@ -61,7 +61,7 @@ class MvChartBubble extends LitElement {
 
       svg,
       body {
-        background-color: #eaf4f8;
+       // background-color: #eaf4f8;
       }
     `;
   }
@@ -284,7 +284,7 @@ class MvChartBubble extends LitElement {
         .attr("xlink:href", (d) => K[d.data])
         .attr("target", link == null ? null : linkTarget)
         .append("image")
-        .attr("xlink:href", "./web_modules/mv-chart-bubble/demo/src/img/fiche-bubblechart.svg")
+        .attr("xlink:href", "./web_modules/mv-chart/bubblechart/src/img/fiche-bubblechart.svg")
         .attr("width", (d) => `${d.r / 2}`)
         .attr("height", (d) => `${d.r / 2}`)
         .attr("x", (d) => -`${d.r / 1.2 / 8}` * 10)
