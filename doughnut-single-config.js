@@ -23,7 +23,7 @@ export const DOUGHNUT_SINGLE_CONFIG = {
         '#cc18e0'
       ],
       links : [
-        'http://apple.com',
+        '',
         'http://microsoft.com',
         'http://nokia.com',
         'http://huawai.com',

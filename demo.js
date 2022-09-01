@@ -604,8 +604,16 @@ ${this.displayRadarHits()}
       
 
       if (DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]){
+
+        if (DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i] != ''){
     loop[i] = html `<a href="${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i]}" target="_blank"  class="result-${i+1}-${max} resultats pos"  style="border:solid 10px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]}</strong></span></a>`; 
-    
+        }
+        else {
+
+          loop[i] = html `<a class="result-${i+1}-${max} resultats pos"  style="cursor:pointer;border:solid 10px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]}</strong></span></a>`; 
+
+
+        }
      }
 
 
