@@ -19,21 +19,6 @@ const data = [{
     "value": 30,
     "image": "./web_modules/mv-chart/bubblechart/src/img/phone.svg",
     "link" : "http://" 
-  },{
-    "id":4,
-    "label": "Social Media",
-    "founds": 5,
-    "value": 5,
-    "image": "./web_modules/mv-chart/bubblechart/src/img/phone.svg",
-    "link" : "http://" 
-  },
-  {
-    "id":5,
-    "label": "Videos",
-    "founds": 8,
-    "value": 25,
-    "image": "./web_modules/mv-chart/bubblechart/src/img/phone.svg",
-    "link" : "http://" 
   }
   ];
 

@@ -110,28 +110,28 @@ export class MvChartDemo extends LitElement {
         height: 280px;
         margin: auto;
         background-color: #fff;
-        box-shadow: 0px 15px 15px #ccc;
+        box-shadow: #333 0px 0px 10px;
         border-radius: 50%;
         position: relative !important;
         margin: auto;
         top: 100px;
       }
       .circle2 {
-        width: 225px;
-        height: 225px;
-        margin: auto;
-        background-color: #fff;
-        box-shadow: 0px 10px 10px #ccc;
-        border-radius: 50%;
-        position: relative;
-        top: 25px;
-      }
+    width: 240px;
+    height: 240px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(204 204 204) 0px 0px 10px;
+    border-radius: 50%;
+    position: relative;
+    top: 20px;
+}
       .circle3 {
         width: 155px;
         height: 155px;
         margin: auto;
         background-color: rgb(255, 255, 255);
-        box-shadow: rgb(204 204 204) 0px 15px 15px;
+        box-shadow: rgb(204 204 204) 0px 0px 15px;
         border-radius: 50%;
         position: relative;
         top: 35px;
@@ -272,7 +272,7 @@ export class MvChartDemo extends LitElement {
         margin-left: -350px;
         top: -100px;
         z-index: 0;
-        box-shadow: rgb(204 204 204) 0px 10px 10px;
+       /* box-shadow: rgb(204 204 204) 0px 10px 10px; */
         border: 5px solid rgb(204, 204, 204);
       }
 
@@ -286,6 +286,22 @@ export class MvChartDemo extends LitElement {
       .social-profile-inner .result {
         font-size: 150px;
       }
+
+
+      .social-profile-inner .title {
+        font-size: 40px;
+        position: relative;
+        top: 50px;
+      }
+
+      .social-profile-inner img {
+        width: 100px;
+        position: relative;
+        top: 40px;
+      }
+
+
+
 
       .resultats {
         border-radius: 50%;
@@ -364,19 +380,14 @@ export class MvChartDemo extends LitElement {
       .resultats a {
         color: #000;
       }
-      .resultats:hover{background-color:#DCE9F2;border-color:#fff !important;box-shadow:0px 5px 5px #333  !important;}
+      .resultats:hover{background-color:#DCE9F2;border-color:#fff !important;}
 
-      .social-profile-inner .title {
-        font-size: 40px;
-        position: relative;
-        top: 50px;
-      }
 
-      .social-profile-inner img {
-        width: 100px;
-        position: relative;
-        top: 40px;
-      }
+
+      .dark{background-color: #EAF4F8 !important;}
+
+
+
 
 
 
@@ -522,7 +533,7 @@ export class MvChartDemo extends LitElement {
       <mv-container class="main-container" .theme="${this.theme}">
         <h2>Donut Single</h2>
         <div class="mv-chart-demo">
-          <div style="transform: scale(0.5);">
+          <div style="transform: scale(0.4);">
             <div class="social-profile-back-stroke">
               <div class="social-profile-back"></div>
             </div>
@@ -549,7 +560,7 @@ ${this.displayDonutBubbles()}
         </div>
       </mv-container>
 
-      <mv-container class="main-container">
+      <mv-container class="main-container" .theme="${this.theme}" >
         <h2>Radar Single</h2>
         <div class="mv-chart-demo">
 
@@ -564,11 +575,7 @@ ${this.displayRadarHits()}
             .data="${RADAR_SINGLE_CONFIG.data}"
             .options="${RADAR_SINGLE_CONFIG.options}"
             .theme="${this.theme}"
-            style="display: block;
-   width: 600px;
-   height: 300px;
-   position: relative;
-   bottom: 190px;margin:auto;"
+            style="position:relative;bottom:190px;margin-bottom :-190px;"
           ></mv-chart>
         </div>
       </mv-container>

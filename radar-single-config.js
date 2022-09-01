@@ -21,7 +21,7 @@ export const RADAR_SINGLE_CONFIG = {
     data: [10, 30, 20, 40, 50, 100],
     fill: true,
     backgroundColor: 'rgba(255, 99, 132, 0)',
-    borderColor: 'rgb(255, 99, 132)',
+    borderColor: '#FF1A44',
     pointBackgroundColor: 'rgb(255, 255, 255)',
     pointBorderColor: 'black',
     pointHoverBackgroundColor: '#fff',

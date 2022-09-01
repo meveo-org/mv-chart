@@ -13,14 +13,16 @@ export const DOUGHNUT_SINGLE_CONFIG = {
     ],
     datasets: [{
       label: 'Donut',
-      data: [30, 10,15,5,20,20],
+      data: [30, 10],
       backgroundColor: [
-        '#f79604',
-        '#ed301e',
-        '#36ea1e',
-        '#e5db20',
-        '#1fb8e2',
-        '#cc18e0'
+
+        '#0D94AD',
+        '#7b4c9f',
+        '#cc18e0',
+        '#F14665',
+        '#F1960C',
+        '#4c9f62'
+
       ],
       links : [
         '',

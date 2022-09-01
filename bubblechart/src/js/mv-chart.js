@@ -60,9 +60,11 @@ class MvChartBubble extends LitElement {
       }
 
       svg,
-      body {
-       // background-color: #eaf4f8;
-      }
+
+
+      #chart {transform: scale(0.8);}
+
+
     `;
   }
 
@@ -70,30 +72,35 @@ class MvChartBubble extends LitElement {
     return html`
       <svg id="chart">
         <defs>
-          <radialGradient id="Gradient0">
-            <stop offset="0%" stop-color="#aef0c7" />
 
-            <stop offset="80%" stop-color="#4c9f62" />
-          </radialGradient>
-          <radialGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="#e6bbf2" />
 
-            <stop offset="80%" stop-color="#7b4c9f" />
-          </radialGradient>
-          <radialGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="#FFB1BF" />
-
-            <stop offset="80%" stop-color="#F14665" />
-          </radialGradient>
-          <radialGradient id="Gradient3" x1="0" x2="0" y1="0" y2="1">
+          <radialGradient id="Gradient0" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0%" stop-color="#70CEDF" />
 
             <stop offset="80%" stop-color="#0D94AD" />
           </radialGradient>
-          <radialGradient id="Gradient4" x1="0" x2="0" y1="0" y2="1">
+          
+          <radialGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#FFB1BF" />
+
+            <stop offset="80%" stop-color="#F14665" />
+          </radialGradient>
+        
+          <radialGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0%" stop-color="#FED5A5" />
 
             <stop offset="80%" stop-color="#F1960C" />
+          </radialGradient>
+
+          <radialGradient id="Gradient3">
+            <stop offset="0%" stop-color="#aef0c7" />
+
+            <stop offset="80%" stop-color="#4c9f62" />
+          </radialGradient>
+          <radialGradient id="Gradient4" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#e6bbf2" />
+
+            <stop offset="80%" stop-color="#7b4c9f" />
           </radialGradient>
 
           <filter
@@ -150,7 +157,7 @@ class MvChartBubble extends LitElement {
     
     
     
-    bulleMini(prec*10/100);
+    bulleMini(prec*40/100);
     
     function bulleMini(sizeMini){
     data.map((item, index) => {
@@ -280,7 +287,7 @@ class MvChartBubble extends LitElement {
 
         gradiant.transition()
         .duration(2000)
-    .style("opacity", "1");;
+    .style("opacity", "1");
     
       gradiant.each(function (p, j) {
         d3.select(this).attr("fill", "url(#Gradient" + (j % 5) + ")");

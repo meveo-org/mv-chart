@@ -110,7 +110,7 @@ export class MvChart extends LitElement {
 
   render() {
     return html`
-      <div class="mv-chart ${this.theme}">
+      <div class="mv-chart">
         <canvas class="mv-chart-canvas"></canvas>
       </div>
     `;
