@@ -145,7 +145,11 @@ export class MvChartDemo extends LitElement {
       .labelindic a {
         color: #000;
         text-decoration: none;
+        display:block;
+        text-align:center;
       }
+
+      .labelindic a:hover{text-decoration:underline;text-shadow:2px 2px 2px #ccc;}
 
       .label1 {
         top: 158px;
