@@ -3,7 +3,7 @@ import {
   html,
   css,
 } from "https://cdn.jsdelivr.net/gh/meveo-org/mv-dependencies@master/lit-element.js";
-import "./d3.v7.min.js"
+import "../../../lib/d3.v7.min.js"
 import data from "./data.js";
 
 
@@ -298,7 +298,7 @@ class MvChartBubble extends LitElement {
         .attr("xlink:href", (d) => K[d.data])
         .attr("target", link == null ? null : linkTarget)
         .append("image")
-        .attr("xlink:href", "./web_modules/mv-chart/bubblechart/src/img/fiche-bubblechart.svg")
+        .attr("xlink:href", "./web_modules/mv-chart/d3js/bubblechart/src/img/fiche-bubblechart.svg")
         .attr("width", (d) => `${d.r / 2}`)
         .attr("height", (d) => `${d.r / 2}`)
         .attr("x", (d) => -`${d.r / 1.2 / 8}` * 10)
@@ -395,4 +395,4 @@ class MvChartBubble extends LitElement {
   
 }
 
-customElements.define("mv-chart-bubble", MvChartBubble);
+customElements.define("mv-chart-bubble-d3", MvChartBubble);

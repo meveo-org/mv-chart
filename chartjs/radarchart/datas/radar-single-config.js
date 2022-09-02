@@ -18,7 +18,7 @@ export const RADAR_SINGLE_CONFIG = {
     'http://lemonde.fr'
   ],
   datasets: [{
-    data: [10, 30, 20, 40, 50, 100],
+    data: [10, 30, 20, 40,20, 10],
     fill: true,
     backgroundColor: 'rgba(255, 99, 132, 0)',
     borderColor: '#FF1A44',

@@ -13,7 +13,7 @@ export const DOUGHNUT_SINGLE_CONFIG = {
     ],
     datasets: [{
       label: 'Donut',
-      data: [30, 10],
+      data: [40,50,20,30,10,5],
       backgroundColor: [
 
         '#0D94AD',

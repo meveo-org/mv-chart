@@ -3,21 +3,21 @@ const data = [{
     "label": "Websites",
     "founds" : 3,
     "value": 25,
-    "image": "./web_modules/mv-chart/bubblechart/src/img/website.svg",
+    "image": "./web_modules/mv-chart/d3js/bubblechart/src/img/website.svg",
     "link" : "" 
   },{
     "id":2,
     "label": "Emails",
     "founds" :4,
     "value": 10,
-    "image": "./web_modules/mv-chart/bubblechart/src/img/email.svg",
+    "image": "./web_modules/mv-chart/d3js/bubblechart/src/img/email.svg",
     "link" : "http://" 
   },{
     "id":3,
     "label": "Phone Numbers",
     "founds": 3,
     "value": 30,
-    "image": "./web_modules/mv-chart/bubblechart/src/img/phone.svg",
+    "image": "./web_modules/mv-chart/d3js/bubblechart/src/img/phone.svg",
     "link" : "http://" 
   }
   ];

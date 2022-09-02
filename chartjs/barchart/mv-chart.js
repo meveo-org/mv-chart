@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit-element";
-import "chartjs";
-import "chartjs-plugin-datalabels";
+import "../lib/chart.min.js";
+import "../lib/chartjs-plugin-datalabels.min.js";
 
 export class MvChart extends LitElement {
   static get properties() {
@@ -127,6 +127,9 @@ export class MvChart extends LitElement {
       this.chart = new Chart(canvas, { type, data, plugins, options });
     }
   }
+
+
+  
 }
 
-customElements.define("mv-chart", MvChart);
+customElements.define("mv-chart-bar", MvChart);
