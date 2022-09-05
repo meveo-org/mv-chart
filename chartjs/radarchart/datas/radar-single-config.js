@@ -4,10 +4,9 @@ export const RADAR_SINGLE_CONFIG = {
   labels: [
     'Android',
     'Apple',
-    'Microsoft',
-    'Facebook',
-    'Instagram',
-    'Press'
+    'microsoft',
+    'nokia',
+    'dell'
   ],
   links: [
     'http://google.com',
@@ -18,10 +17,10 @@ export const RADAR_SINGLE_CONFIG = {
     'http://lemonde.fr'
   ],
   datasets: [{
-    data: [10, 30, 20, 40, 50, 100],
+    data: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
     fill: true,
     backgroundColor: 'rgba(255, 99, 132, 0)',
-    borderColor: 'rgb(255, 99, 132)',
+    borderColor: '#FF1A44',
     pointBackgroundColor: 'rgb(255, 255, 255)',
     pointBorderColor: 'black',
     pointHoverBackgroundColor: '#fff',
@@ -30,11 +29,18 @@ export const RADAR_SINGLE_CONFIG = {
   }]
 },
 options: {
+
+
+
+  
     legend: {
     display: false,
     title:false,
       labels: {
-        usePointStyle: true,
+        usePointStyle: false,
+      },
+      datalabels: {
+        display: false,
       },
 
     
@@ -47,11 +53,22 @@ options: {
     display: false
   },
   scale: {
+    y: {
+      ticks: {
+        // For a category axis, the val is the index so the lookup via getLabelForValue is needed
+        callback: function(val, index) {
+          // Hide every 2nd tick label
+          return index % 2 === 0 ? this.getLabelForValue(val) : '';
+        },
+        color: 'red',
+      }
+    },
 
      ticks: {
         maxTicksLimit: 1,
         display: false,
-        drawTicks:false
+        drawTicks:false,
+        display:false
      },
      gridLines: {
       drawOnChartArea: false,
@@ -62,16 +79,9 @@ options: {
     }
   },
   plugins: {
-    datalabels: {
-        anchor: 'end',
-        align: 'top',
-        formatter: Math.round,
-        font: {
-            weight: 'bold'
-        },
-        display:false
-    }
+    datalabels: {display:false}
 },
+
    elements: {
       line: {
         borderWidth: 3

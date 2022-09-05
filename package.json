@@ -21,5 +21,8 @@
   "homepage": "https://github.com/meveo-org/mv-chart#readme",
   "devDependencies": {
     "es-dev-server": "^1.46.1"
+  },
+  "dependencies": {
+    "radar-chart-d3": "^1.2.0"
   }
 }
