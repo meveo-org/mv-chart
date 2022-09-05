@@ -142,7 +142,10 @@ export class MvChart extends LitElement {
         left: 50%;
         z-index: 9999;
       }
+<<<<<<< HEAD
       .labelindic span{text-transform:uppercase;font-size: 11px;}
+=======
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
       .labelindic a {
         color: #000;
         text-decoration: none;
@@ -152,6 +155,7 @@ export class MvChart extends LitElement {
 
       .labelindic a:hover{text-decoration:underline;text-shadow:2px 2px 2px #ccc;}
 
+<<<<<<< HEAD
 
 
 
@@ -247,11 +251,35 @@ export class MvChart extends LitElement {
         margin-left: -22px;
       }
       .pos-5-6 {
+=======
+      .label1 {
+        margin-left: -21px;
+        margin-top:65px;
+      }
+      .label2 {
+        z-index: 9999;
+        margin-left: 120px;
+        margin-top: 135px;
+      }
+      .label3 {
+        margin-top: 322px;
+        margin-left: 117px;
+      }
+      .label4 {
+        margin-top: 390px;
+        margin-left: -22px;
+      }
+      .label5 {
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
         margin-top: 320px;
         margin-left: -167px;
         text-align: right;
       }
+<<<<<<< HEAD
       .pos-6-6 {
+=======
+      .label6 {
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
         margin-top: 132px;
         margin-left: -165px;
         text-align: right;
@@ -267,6 +295,7 @@ export class MvChart extends LitElement {
     super();
     this.theme = "light";
     this.chart = null;
+<<<<<<< HEAD
     this.valeur=null;
   }
 
@@ -276,12 +305,18 @@ export class MvChart extends LitElement {
       valeur: {type: Array},
 
     };
+=======
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
   }
 
   render() {
     return html`
 
+<<<<<<< HEAD
 <div style="transform: scale(1);height:400px;">
+=======
+<div style="transform: scale(1);">
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 ${this.displayRadarHits()}
 
 <div class="circle1" style="position:relative;">
@@ -294,7 +329,11 @@ ${this.displayRadarHits()}
       </div>
 
       </div>
+<<<<<<< HEAD
       <button @click=${this.randomize}>randomise</button>
+=======
+
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 
     `;
   }
@@ -317,6 +356,7 @@ ${this.displayRadarHits()}
   displayRadarHits(){
     let i;
     let loop = new Array();
+<<<<<<< HEAD
     this.valeur = new Array();
 
 
@@ -332,6 +372,15 @@ ${this.displayRadarHits()}
     <div class="label${i+1} labelindic pos-${i+1}-${max}">
       <a href="${RADAR_SINGLE_CONFIG.data.links[i]}" target="_blank"
         ><!--<span>${RADAR_SINGLE_CONFIG.data.labels[i]}</span><br/>-->${this.valeur[i]} hits</a
+=======
+    let max = RADAR_SINGLE_CONFIG.data.datasets[0].data.length;
+    for (i=0;i<max;i++){
+
+      loop[i] = html `
+    <div class="label${i+1} labelindic">
+      <a href="${RADAR_SINGLE_CONFIG.data.links[i]}" target="_blank"
+        >${RADAR_SINGLE_CONFIG.data.datasets[0].data[i]} hits</a
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
       >
     </div>`;   
     }
@@ -342,6 +391,7 @@ ${this.displayRadarHits()}
   }
 
 
+<<<<<<< HEAD
 
 
   randomize(){
@@ -377,6 +427,8 @@ ${this.displayRadarHits()}
       }
 
 
+=======
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
   
 }
 

@@ -13,7 +13,11 @@ export const DOUGHNUT_SINGLE_CONFIG = {
     ],
     datasets: [{
       label: 'Donut',
+<<<<<<< HEAD
       data: [Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100)],
+=======
+      data: [40,50,20,30,10,5],
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
       backgroundColor: [
 
         '#0D94AD',

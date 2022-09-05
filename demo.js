@@ -7,7 +7,11 @@ import "./chartjs/radarchart/mv-chart.js";
 
 import "./chartjs/donutchart/mv-chart-single.js";
 import "./chartjs/radarchart/mv-chart-single.js";
+<<<<<<< HEAD
 import "./d3js/bubblechart/mv-chart-single.js";
+=======
+import "./d3js/bubblechart/src/js/mv-chart.js";
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 
 
 import { BARCHART_CONFIG } from "./chartjs/barchart/datas/barchart-config.js";
@@ -207,7 +211,11 @@ export class MvChartDemo extends LitElement {
 
 
    
+<<<<<<< HEAD
       <h2>Bubble Chart D3js</h2>
+=======
+      <h2>Bubble D3</h2>
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
         <mv-chart-bubble-d3></mv-chart-bubble-d3>
  </mv-container>
 

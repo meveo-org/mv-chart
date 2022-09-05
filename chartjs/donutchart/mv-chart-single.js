@@ -316,8 +316,11 @@ export class MvChart extends LitElement {
 .result-5-6{top: 135px !important;left: -275px  !important; animation: fadein 4s;}
 .result-6-6{left:-160px !important;top:-145px;animation: fadein 5s;}
 
+<<<<<<< HEAD
 a.nolink:hover{cursor:context-menu !important;background-color:#fff;border-color:#DCE9F2 !important;}
 
+=======
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 
 
 
@@ -344,6 +347,7 @@ a.nolink:hover{cursor:context-menu !important;background-color:#fff;border-color
     super();
     this.theme = "light";
     this.chart = null;
+<<<<<<< HEAD
     this.valeur=null;
   }
 
@@ -357,6 +361,10 @@ a.nolink:hover{cursor:context-menu !important;background-color:#fff;border-color
   }
 
 
+=======
+  }
+
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
   render() {
     return html`
 
@@ -378,7 +386,10 @@ a.nolink:hover{cursor:context-menu !important;background-color:#fff;border-color
         
 
 ${this.displayDonutBubbles()}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 </div>
 
 
@@ -412,6 +423,7 @@ ${this.displayDonutBubbles()}
 
 
   randomize(){
+<<<<<<< HEAD
 this.valeur ;
 
 
@@ -429,6 +441,13 @@ this.valeur ;
 
 
    
+=======
+
+
+      DOUGHNUT_SINGLE_CONFIG.result = "70";
+
+      console.log(DOUGHNUT_SINGLE_CONFIG.result);
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 
 
       const { type, data, options } = this;
@@ -437,6 +456,7 @@ this.valeur ;
       const canvas = this.shadowRoot
         .querySelector(".mv-chart-canvas")
         .getContext("2d");
+<<<<<<< HEAD
         this.chart.destroy();
       this.chart = new Chart(canvas, { type, data, plugins, options });
 
@@ -446,15 +466,23 @@ this.valeur=null;
 
 
 
+=======
+      this.chart = new Chart(canvas, { type, data, plugins, options });
+
+
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 
   }
 
   displayDonutBubbles(){
     let i;
     let loop = new Array();
+<<<<<<< HEAD
     this.valeur = new Array();
 
   
+=======
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 
     let max = DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data.length;
     for (i=0;i<max;i++){
@@ -462,6 +490,7 @@ this.valeur=null;
 
       if (DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]){
 
+<<<<<<< HEAD
         this.valeur[i]= DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i];
 
         if (DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i] != ''){
@@ -474,6 +503,14 @@ this.valeur=null;
         else {
 
           loop[i] = html `<a class="result-${i+1}-${max} resultats pos nolink"  style="border:solid 10px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong id="value-${i}">${this.valeur[i]}</strong></span></a>`; 
+=======
+        if (DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i] != ''){
+    loop[i] = html `<a href="${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i]}" target="_blank"  class="result-${i+1}-${max} resultats pos"  style="border:solid 10px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]}</strong></span></a>`; 
+        }
+        else {
+
+          loop[i] = html `<a class="result-${i+1}-${max} resultats pos"  style="cursor:pointer;border:solid 10px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]}</strong></span></a>`; 
+>>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 
 
         }
