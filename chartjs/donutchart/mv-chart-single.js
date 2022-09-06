@@ -1,24 +1,41 @@
-import { LitElement, html, css } from "lit-element";
+import {LitElement, html, css} from "lit-element";
 import "../lib/chart.min.js";
 import "../lib/chartjs-plugin-datalabels.min.js";
-import { DOUGHNUT_SINGLE_CONFIG } from "./datas/doughnut-single-config.js";
+import {DOUGHNUT_SINGLE_CONFIG} from "./datas/doughnut-single-config.js";
 
 export class MvChart extends LitElement {
-  static get properties() {
-    return {
-      type: { type: String, attribute: true },
-      data: { type: Object, attribute: false, reflect: true },
-      options: { type: Object, attribute: false, reflect: true },
-      plugins: { type: Object, attribute: false, reflect: true },
+    static get properties() {
+        return {
+            type: {
+                type: String,
+                attribute: true
+            },
+            data: {
+                type: Object,
+                attribute: false,
+                reflect: true
+            },
+            options: {
+                type: Object,
+                attribute: false,
+                reflect: true
+            },
+            plugins: {
+                type: Object,
+                attribute: false,
+                reflect: true
+            },
 
-      //  valid theme values are: "light", "dark"
-      //    default: "light"
-      theme: { type: String, attribute: true }
-    };
-  }
+            //  valid theme values are: "light", "dark"    default: "light"
+            theme: {
+                type: String,
+                attribute: true
+            }
+        };
+    }
 
-  static get styles() {
-    return css`
+    static get styles() {
+        return css `
       :host {
         font-family: var(--font-family, Arial);
         font-size: var(--font-size-m, 10pt);
@@ -316,11 +333,8 @@ export class MvChart extends LitElement {
 .result-5-6{top: 135px !important;left: -275px  !important; animation: fadein 4s;}
 .result-6-6{left:-160px !important;top:-145px;animation: fadein 5s;}
 
-<<<<<<< HEAD
 a.nolink:hover{cursor:context-menu !important;background-color:#fff;border-color:#DCE9F2 !important;}
 
-=======
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 
 
 
@@ -341,32 +355,25 @@ a.nolink:hover{cursor:context-menu !important;background-color:#fff;border-color
 
 
     `;
-  }
+    }
 
-  constructor() {
-    super();
-    this.theme = "light";
-    this.chart = null;
-<<<<<<< HEAD
-    this.valeur=null;
-  }
+    constructor() {
+        super();
+        this.theme = "light";
+        this.chart = null;
+        this.valeur = null;
+    }
 
+    static get properties() {
+        return {
+            valeur: {
+                type: Array
+            }
+        };
+    }
 
-  
-  static get properties() {
-    return {
-      valeur: {type: Array},
-
-    };
-  }
-
-
-=======
-  }
-
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
-  render() {
-    return html`
+    render() {
+        return html `
 
 
 
@@ -376,20 +383,19 @@ a.nolink:hover{cursor:context-menu !important;background-color:#fff;border-color
             </div>
             <div class="social-profile">
               <div class="social-profile-inner">
-                <img src="web_modules/mv-chart/chartjs/donutchart/img/donut-img.svg" /><br /><span
+                <img src="./web_modules/mv-chart/chartjs/donutchart/img/donut-img.svg" /><br /><span
                   class="title"
                   >Brands</span
                 ><br /><span class="result"
-                  >${DOUGHNUT_SINGLE_CONFIG.result}</span
+                  >${DOUGHNUT_SINGLE_CONFIG
+            .result}</span
                 >
               </div>
         
 
-${this.displayDonutBubbles()}
-<<<<<<< HEAD
+${this
+            .displayDonutBubbles()}
 
-=======
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 </div>
 
 
@@ -399,130 +405,111 @@ ${this.displayDonutBubbles()}
       </div>
 
 
-<button @click=${this.randomize}>randomise</button>
+<button @click=${this
+            .randomize}>randomise</button>
 
 
     `;
-  }
-
-  firstUpdated() {
-    if (!this.chart) {
-      const { type, data, options } = this;
-      const plugins = this.plugins || [];
-      plugins.push(ChartDataLabels);
-      const canvas = this.shadowRoot
-        .querySelector(".mv-chart-canvas")
-        .getContext("2d");
-      this.chart = new Chart(canvas, { type, data, plugins, options });
     }
 
-    
-  }
-
-
-
-
-  randomize(){
-<<<<<<< HEAD
-this.valeur ;
-
-
-    let nbBulles = DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data.length;
-
-
-    let i ;
-    for (i=0;i<nbBulles;i++){
-
-    DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i] = Math.floor(Math.random() * 100);
-
-
-  }
-
-
-
-   
-=======
-
-
-      DOUGHNUT_SINGLE_CONFIG.result = "70";
-
-      console.log(DOUGHNUT_SINGLE_CONFIG.result);
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
-
-
-      const { type, data, options } = this;
-      const plugins = this.plugins || [];
-      plugins.push(ChartDataLabels);
-      const canvas = this.shadowRoot
-        .querySelector(".mv-chart-canvas")
-        .getContext("2d");
-<<<<<<< HEAD
-        this.chart.destroy();
-      this.chart = new Chart(canvas, { type, data, plugins, options });
-
-
-   
-this.valeur=null;
-
-
-
-=======
-      this.chart = new Chart(canvas, { type, data, plugins, options });
-
-
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
-
-  }
-
-  displayDonutBubbles(){
-    let i;
-    let loop = new Array();
-<<<<<<< HEAD
-    this.valeur = new Array();
-
-  
-=======
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
-
-    let max = DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data.length;
-    for (i=0;i<max;i++){
-      
-
-      if (DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]){
-
-<<<<<<< HEAD
-        this.valeur[i]= DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i];
-
-        if (DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i] != ''){
-
-        
-  
-          
-    loop[i] = html `<a href="${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i]}" target="_blank"  class="result-${i+1}-${max} resultats pos"  style="border:solid 10px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong id="value-${i}">${this.valeur[i]}</strong></span></a>`; 
+    firstUpdated() {
+        if (!this.chart) {
+            const {type, data, options} = this;
+            const plugins = this.plugins || [];
+            plugins.push(ChartDataLabels);
+            const canvas = this
+                .shadowRoot
+                .querySelector(".mv-chart-canvas")
+                .getContext("2d");
+            this.chart = new Chart(canvas, {type, data, plugins, options});
         }
-        else {
-
-          loop[i] = html `<a class="result-${i+1}-${max} resultats pos nolink"  style="border:solid 10px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong id="value-${i}">${this.valeur[i]}</strong></span></a>`; 
-=======
-        if (DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i] != ''){
-    loop[i] = html `<a href="${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i]}" target="_blank"  class="result-${i+1}-${max} resultats pos"  style="border:solid 10px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]}</strong></span></a>`; 
-        }
-        else {
-
-          loop[i] = html `<a class="result-${i+1}-${max} resultats pos"  style="cursor:pointer;border:solid 10px ${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG.data.names[i]}</span><br /><strong>${DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]}</strong></span></a>`; 
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
-
-
-        }
-     }
-
 
     }
-    return  loop;
-  }
 
+    randomize() {
+        this.valeur;
 
-  
+        let nbBulles = DOUGHNUT_SINGLE_CONFIG
+            .data
+            .datasets[0]
+            .data
+            .length;
+
+        let i;
+        for (i = 0; i < nbBulles; i++) {
+
+            DOUGHNUT_SINGLE_CONFIG
+                .data
+                .datasets[0]
+                .data[i] = Math.floor(Math.random() * 100);
+
+        }
+
+        const {type, data, options} = this;
+        const plugins = this.plugins || [];
+        plugins.push(ChartDataLabels);
+        const canvas = this
+            .shadowRoot
+            .querySelector(".mv-chart-canvas")
+            .getContext("2d");
+        this
+            .chart
+            .destroy();
+        this.chart = new Chart(canvas, {type, data, plugins, options});
+
+        this.valeur = null;
+
+    }
+
+    displayDonutBubbles() {
+        let i;
+        let loop = new Array();
+        this.valeur = new Array();
+
+        let max = DOUGHNUT_SINGLE_CONFIG
+            .data
+            .datasets[0]
+            .data
+            .length;
+
+        for (i = 0; i < max; i++) {
+
+            if (DOUGHNUT_SINGLE_CONFIG.data.datasets[0].data[i]) {
+
+                this.valeur[i] = DOUGHNUT_SINGLE_CONFIG
+                    .data
+                    .datasets[0]
+                    .data[i];
+
+                if (DOUGHNUT_SINGLE_CONFIG.data.datasets[0].links[i] != '') {
+
+                    loop[i] = html `<a href="${DOUGHNUT_SINGLE_CONFIG
+                        .data
+                        .datasets[0]
+                        .links[i]}" target="_blank"  class="result-${i + 1}-${max} resultats pos"  style="border:solid 10px ${DOUGHNUT_SINGLE_CONFIG
+                        .data
+                        .datasets[0]
+                        .backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG
+                        .data
+                        .names[i]}</span><br /><strong id="value-${i}">${this
+                        .valeur[i]}</strong></span></a>`;
+                } else {
+
+                    loop[i] = html `<a class="result-${i + 1}-${max} resultats pos nolink"  style="border:solid 10px ${DOUGHNUT_SINGLE_CONFIG
+                        .data
+                        .datasets[0]
+                        .backgroundColor[i]};"><span><span>${DOUGHNUT_SINGLE_CONFIG
+                        .data
+                        .names[i]}</span><br /><strong id="value-${i}">${this
+                        .valeur[i]}</strong></span></a>`;
+
+                }
+            }
+
+        }
+        return loop;
+    }
+
 }
 
 customElements.define("mv-chart-donut-single", MvChart);

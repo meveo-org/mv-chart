@@ -6,14 +6,31 @@ import { RADAR_SINGLE_CONFIG } from "./datas/radar-single-config.js";
 export class MvChart extends LitElement {
   static get properties() {
     return {
-      type: { type: String, attribute: true },
-      data: { type: Object, attribute: false, reflect: true },
-      options: { type: Object, attribute: false, reflect: true },
-      plugins: { type: Object, attribute: false, reflect: true },
+      type: {
+        type: String,
+        attribute: true
+      },
+      data: {
+        type: Object,
+        attribute: false,
+        reflect: true
+      },
+      options: {
+        type: Object,
+        attribute: false,
+        reflect: true
+      },
+      plugins: {
+        type: Object,
+        attribute: false,
+        reflect: true
+      },
 
-      //  valid theme values are: "light", "dark"
-      //    default: "light"
-      theme: { type: String, attribute: true }
+      //  valid theme values are: "light", "dark"    default: "light"
+      theme: {
+        type: String,
+        attribute: true
+      }
     };
   }
 
@@ -142,10 +159,7 @@ export class MvChart extends LitElement {
         left: 50%;
         z-index: 9999;
       }
-<<<<<<< HEAD
       .labelindic span{text-transform:uppercase;font-size: 11px;}
-=======
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
       .labelindic a {
         color: #000;
         text-decoration: none;
@@ -154,8 +168,8 @@ export class MvChart extends LitElement {
       }
 
       .labelindic a:hover{text-decoration:underline;text-shadow:2px 2px 2px #ccc;}
+      .nolink a:hover{text-decoration:none;cursor:default;}
 
-<<<<<<< HEAD
 
 
 
@@ -221,16 +235,19 @@ export class MvChart extends LitElement {
         margin-top:165px;
       }
       .pos-3-5{
-        margin-top: 340px;
-        margin-left: 80px;
+        margin-top: 380px;
+        margin-left: 84px;
+        text-align: left;
       }
       .pos-4-5{
-        margin-left: -120px;
-        margin-top: 340px;
+        margin-left: -133px;
+        margin-top: 380px;
+        text-align: left;
       }
       .pos-5-5{
         margin-top: 165px;
-        margin-left: -170px;
+        margin-left: -185px;
+        text-align: left;
       }
 
 
@@ -251,35 +268,11 @@ export class MvChart extends LitElement {
         margin-left: -22px;
       }
       .pos-5-6 {
-=======
-      .label1 {
-        margin-left: -21px;
-        margin-top:65px;
-      }
-      .label2 {
-        z-index: 9999;
-        margin-left: 120px;
-        margin-top: 135px;
-      }
-      .label3 {
-        margin-top: 322px;
-        margin-left: 117px;
-      }
-      .label4 {
-        margin-top: 390px;
-        margin-left: -22px;
-      }
-      .label5 {
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
         margin-top: 320px;
         margin-left: -167px;
         text-align: right;
       }
-<<<<<<< HEAD
       .pos-6-6 {
-=======
-      .label6 {
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
         margin-top: 132px;
         margin-left: -165px;
         text-align: right;
@@ -295,45 +288,36 @@ export class MvChart extends LitElement {
     super();
     this.theme = "light";
     this.chart = null;
-<<<<<<< HEAD
-    this.valeur=null;
+    this.valeur = null;
   }
 
-
-    static get properties() {
+  static get properties() {
     return {
-      valeur: {type: Array},
-
+      valeur: {
+        type: Array
+      }
     };
-=======
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
   }
 
   render() {
     return html`
 
-<<<<<<< HEAD
 <div style="transform: scale(1);height:400px;">
-=======
-<div style="transform: scale(1);">
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
-${this.displayRadarHits()}
+  ${this.displayRadarHits()}
 
-<div class="circle1" style="position:relative;">
-  <div class="circle2"><div class="circle3"></div></div>
+  <div class="circle1" style="position:relative;">
+    <div class="circle2">
+      <div class="circle3"></div>
+    </div>
+  </div>
+
+
+  <div class="mv-chart">
+    <canvas class="mv-chart-canvas"></canvas>
+  </div>
+
 </div>
-
-
-      <div class="mv-chart">
-        <canvas class="mv-chart-canvas"></canvas>
-      </div>
-
-      </div>
-<<<<<<< HEAD
-      <button @click=${this.randomize}>randomise</button>
-=======
-
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
+<button @click=${this.randomize}>randomise</button>
 
     `;
   }
@@ -343,93 +327,91 @@ ${this.displayRadarHits()}
       const { type, data, options } = this;
       const plugins = this.plugins || [];
       plugins.push(ChartDataLabels);
-      const canvas = this.shadowRoot
+      const canvas = this
+        .shadowRoot
         .querySelector(".mv-chart-canvas")
         .getContext("2d");
       this.chart = new Chart(canvas, { type, data, plugins, options });
     }
   }
 
-
-
-
-  displayRadarHits(){
+  displayRadarHits() {
     let i;
     let loop = new Array();
-<<<<<<< HEAD
     this.valeur = new Array();
 
-
     let max = RADAR_SINGLE_CONFIG.data.labels.length;
-    for (i=0;i<max;i++){
-      
-      
-      this.valeur[i] = RADAR_SINGLE_CONFIG.data.datasets[0].data[i];
+    for (i = 0; i < max; i++) {
 
+      this.valeur[i] = RADAR_SINGLE_CONFIG
+        .data
+        .datasets[0]
+        .data[i];
 
+      if (RADAR_SINGLE_CONFIG.data.links[i] != '') {
+        loop[i] = html`
+    <div class="label${i + 1} labelindic pos-${i + 1}-${max}">
+      <a href="${RADAR_SINGLE_CONFIG
+                .data
+                .links[i]}" target="_blank">
+        <!--<span>${RADAR_SINGLE_CONFIG
+                .data
+                .labels[i]}</span><br/>-->${this
+                    .valeur[i]} hits</a>
+    </div>`;
+      } else {
 
-      loop[i] = html `
-    <div class="label${i+1} labelindic pos-${i+1}-${max}">
-      <a href="${RADAR_SINGLE_CONFIG.data.links[i]}" target="_blank"
-        ><!--<span>${RADAR_SINGLE_CONFIG.data.labels[i]}</span><br/>-->${this.valeur[i]} hits</a
-=======
-    let max = RADAR_SINGLE_CONFIG.data.datasets[0].data.length;
-    for (i=0;i<max;i++){
+        loop[i] = html`
+    <div class="label${i + 1} labelindic pos-${i + 1}-${max} nolink">
+      <a>
+        <!--<span>${RADAR_SINGLE_CONFIG
+                .data
+                .labels[i]}</span><br/>-->${this
+                    .valeur[i]} hits</a>
+    </div>`;
 
-      loop[i] = html `
-    <div class="label${i+1} labelindic">
-      <a href="${RADAR_SINGLE_CONFIG.data.links[i]}" target="_blank"
-        >${RADAR_SINGLE_CONFIG.data.datasets[0].data[i]} hits</a
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
-      >
-    </div>`;   
+      }
+
     }
     return loop;
 
+  }
 
+  randomize() {
+    this.valeur;
+    let nbBulles = RADAR_SINGLE_CONFIG
+      .data
+      .datasets[0]
+      .data
+      .length;
+    let i;
+    for (i = 0; i < nbBulles; i++) {
+      RADAR_SINGLE_CONFIG
+        .data
+        .datasets[0]
+        .data[i] = null;
+      RADAR_SINGLE_CONFIG
+        .data
+        .datasets[0]
+        .data[i] = Math.floor(Math.random() * 100);
+    }
+
+    const { type, data, options } = this;
+    const plugins = this.plugins || [];
+    plugins.push(ChartDataLabels);
+    const canvas = this
+      .shadowRoot
+      .querySelector(".mv-chart-canvas")
+      .getContext("2d");
+    this
+      .chart
+      .destroy();
+    this.chart = new Chart(canvas, { type, data, plugins, options });
+
+    this.valeur = null;
 
   }
 
-
-<<<<<<< HEAD
-
-
-  randomize(){
-    this.valeur ;    
-        let nbBulles = RADAR_SINGLE_CONFIG.data.datasets[0].data.length;
-        let i ;
-        for (i=0;i<nbBulles;i++){
-          RADAR_SINGLE_CONFIG.data.datasets[0].data[i] =null;
-        RADAR_SINGLE_CONFIG.data.datasets[0].data[i] = Math.floor(Math.random() * 100);
-      }
-    
-    
-    
-     
-      const { type, data, options } = this;
-      const plugins = this.plugins || [];
-      plugins.push(ChartDataLabels);
-      const canvas = this.shadowRoot
-        .querySelector(".mv-chart-canvas")
-        .getContext("2d");
-        this.chart.destroy();
-      this.chart = new Chart(canvas, { type, data, plugins, options });
-    
-
-    
-    
-       
-  
-          this.valeur=null;
-    
-    
-    
-      }
-
-
-=======
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
-  
 }
 
 customElements.define("mv-chart-radar-single", MvChart);

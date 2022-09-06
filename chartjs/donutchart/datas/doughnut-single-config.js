@@ -1,8 +1,8 @@
 export const DOUGHNUT_SINGLE_CONFIG = {
   type: "doughnut",
-  result:Math.floor(Math.random() * 100),
+  result: Math.floor(Math.random() * 100),
   data: {
-   
+
     names: [
       'Apple',
       'Windows',
@@ -13,11 +13,12 @@ export const DOUGHNUT_SINGLE_CONFIG = {
     ],
     datasets: [{
       label: 'Donut',
-<<<<<<< HEAD
-      data: [Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100)],
-=======
-      data: [40,50,20,30,10,5],
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
+      data: [Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100),
+      Math.floor(Math.random() * 100)],
       backgroundColor: [
 
         '#0D94AD',
@@ -28,7 +29,7 @@ export const DOUGHNUT_SINGLE_CONFIG = {
         '#4c9f62'
 
       ],
-      links : [
+      links: [
         '',
         'http://microsoft.com',
         'http://nokia.com',
@@ -38,13 +39,13 @@ export const DOUGHNUT_SINGLE_CONFIG = {
 
       ],
       hoverOffset: 4,
-      doughnut:{
-        borderWidth:100
+      doughnut: {
+        borderWidth: 100
       }
     }]
   },
   options: {
-    
+
     responsive: true,
     maintainAspectRatio: false,
     plugins: {

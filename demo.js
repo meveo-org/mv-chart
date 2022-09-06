@@ -7,11 +7,7 @@ import "./chartjs/radarchart/mv-chart.js";
 
 import "./chartjs/donutchart/mv-chart-single.js";
 import "./chartjs/radarchart/mv-chart-single.js";
-<<<<<<< HEAD
 import "./d3js/bubblechart/mv-chart-single.js";
-=======
-import "./d3js/bubblechart/src/js/mv-chart.js";
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
 
 
 import { BARCHART_CONFIG } from "./chartjs/barchart/datas/barchart-config.js";
@@ -94,142 +90,103 @@ export class MvChartDemo extends LitElement {
     `;
   }
 
-    constructor() {
-      super();
-      this.theme = "light";
-    }
+  constructor() {
+    super();
+    this.theme = "light";
+  }
 
 
-  firstUpdated(){
+  firstUpdated() {
 
 
-    
+
   }
   render() {
     return html`
       <fieldset>
         <legend>Theme</legend>
         <label>
-          <input
-            type="radio"
-            name="theme"
-            value="light"
-            checked
-            @change="${this.changeTheme}"
-          />Light
+          <input type="radio" name="theme" value="light" checked @change="${this.changeTheme}" />Light
         </label>
         <label>
-          <input
-            type="radio"
-            name="theme"
-            value="dark"
-            @change="${this.changeTheme}"
-          />Dark
+          <input type="radio" name="theme" value="dark" @change="${this.changeTheme}" />Dark
         </label>
       </fieldset>
- <mv-container class="dashboard-sample" .theme="${this.theme}">
-    
-
-
-
- <h2>Radarchart Chartjs</h2>
+      <mv-container class="dashboard-sample" .theme="${this.theme}">
+      
+      
+      
+      
+        <h2>Radarchart Chartjs</h2>
         <div class="mv-chart-demo">
-       
-      <mv-chart-radar
-              .type="${RADAR_CONFIG.type}"
-              .data="${RADAR_CONFIG.data}"
-              .options="${RADAR_CONFIG.options}"
-              .theme="${this.theme}"
-            ></mv-chart-radar>
-          </div>
-
-
-
- <h2>Donutchart Chartjs</h2>
+      
+          <mv-chart-radar .type="${RADAR_CONFIG.type}" .data="${RADAR_CONFIG.data}" .options="${RADAR_CONFIG.options}"
+            .theme="${this.theme}"></mv-chart-radar>
+        </div>
+      
+      
+      
+        <h2>Donutchart Chartjs</h2>
         <div class="mv-chart-demo">
-       
-      <mv-chart-donut
-              .type="${DOUGHNUT_CONFIG.type}"
-              .data="${DOUGHNUT_CONFIG.data}"
-              .options="${DOUGHNUT_CONFIG.options}"
-              .theme="${this.theme}"
-            ></mv-chart-donut>
-          </div>
-
-
- <h2>Barchart Chartjs</h2>
+      
+          <mv-chart-donut .type="${DOUGHNUT_CONFIG.type}" .data="${DOUGHNUT_CONFIG.data}"
+            .options="${DOUGHNUT_CONFIG.options}" .theme="${this.theme}"></mv-chart-donut>
+        </div>
+      
+      
+        <h2>Barchart Chartjs</h2>
         <div class="mv-chart-demo">
-       
-      <mv-chart-bar
-              .type="${BARCHART_CONFIG.type}"
-              .data="${BARCHART_CONFIG.data}"
-              .options="${BARCHART_CONFIG.options}"
-              .theme="${this.theme}"
-            ></mv-chart-bar>
-          </div>
-
-
-          <h2>Bubble Chartjs</h2>
+      
+          <mv-chart-bar .type="${BARCHART_CONFIG.type}" .data="${BARCHART_CONFIG.data}" .options="${BARCHART_CONFIG.options}"
+            .theme="${this.theme}"></mv-chart-bar>
+        </div>
+      
+      
+        <h2>Bubble Chartjs</h2>
         <div class="mv-chart-demo">
-       
-      <mv-chart-bubble
-              .type="${BUBBLE_CONFIG.type}"
-              .data="${BUBBLE_CONFIG.data}"
-              .options="${BUBBLE_CONFIG.options}"
-              .theme="${this.theme}"
-            ></mv-chart-bubble>
-          </div>
-
-
-    
+      
+          <mv-chart-bubble .type="${BUBBLE_CONFIG.type}" .data="${BUBBLE_CONFIG.data}" .options="${BUBBLE_CONFIG.options}"
+            .theme="${this.theme}"></mv-chart-bubble>
+        </div>
+      
+      
+      
         <h2>Donut Chartjs</h2>
         <div class="mv-chart-demo">
-       
-      <mv-chart-donut-single
-              .type="${DOUGHNUT_SINGLE_CONFIG.type}"
-              .data="${DOUGHNUT_SINGLE_CONFIG.data}"
-              .options="${DOUGHNUT_SINGLE_CONFIG.options}"
-              .theme="${this.theme}"
-            ></mv-chart-donut-single>
-          </div>
-    
-
- 
+      
+          <mv-chart-donut-single .type="${DOUGHNUT_SINGLE_CONFIG.type}" .data="${DOUGHNUT_SINGLE_CONFIG.data}"
+            .options="${DOUGHNUT_SINGLE_CONFIG.options}" .theme="${this.theme}"></mv-chart-donut-single>
+        </div>
+      
+      
+      
         <h2>Radar Chartjs</h2>
         <div class="mv-chart-demo">
-
-          <mv-chart-radar-single
-            .type="${RADAR_SINGLE_CONFIG.type}"
-            .data="${RADAR_SINGLE_CONFIG.data}"
-            .options="${RADAR_SINGLE_CONFIG.options}"
-            .theme="${this.theme}"
-            ></mv-chart-radar-single>
+      
+          <mv-chart-radar-single .type="${RADAR_SINGLE_CONFIG.type}" .data="${RADAR_SINGLE_CONFIG.data}"
+            .options="${RADAR_SINGLE_CONFIG.options}" .theme="${this.theme}"></mv-chart-radar-single>
         </div>
-    
-
-
-
-
-   
-<<<<<<< HEAD
-      <h2>Bubble Chart D3js</h2>
-=======
-      <h2>Bubble D3</h2>
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
+      
+      
+      
+      
+      
+      
+        <h2>Bubble Chart D3js</h2>
         <mv-chart-bubble-d3></mv-chart-bubble-d3>
- </mv-container>
-
-<!--
-      <mv-container class="main-container" .theme="${this.theme}">
-      <h2>Donut Single</h2>
-        <mv-chart-donut></mv-chart-donut>
       </mv-container>
-
-      <mv-container class="main-container" .theme="${this.theme}">
-      <h2>Radar Single</h2>
-        <mv-chart-radar></mv-chart-radar>
-      </mv-container>
-  --> 
+      
+      <!--
+                        <mv-container class="main-container" .theme="${this.theme}">
+                        <h2>Donut Single</h2>
+                          <mv-chart-donut></mv-chart-donut>
+                        </mv-container>
+                  
+                        <mv-container class="main-container" .theme="${this.theme}">
+                        <h2>Radar Single</h2>
+                          <mv-chart-radar></mv-chart-radar>
+                        </mv-container>
+                    -->
 
 
       
@@ -247,7 +204,7 @@ export class MvChartDemo extends LitElement {
 
 
 
-  
+
 
 
 

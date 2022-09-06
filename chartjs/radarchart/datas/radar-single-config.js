@@ -4,9 +4,9 @@ export const RADAR_SINGLE_CONFIG = {
   labels: [
     'Android',
     'Apple',
-    'microsoft',
-    'nokia',
-    'dell'
+    'Microsoft',
+    'Nokia',
+    'Dell'
   ],
   links: [
     'http://google.com',
@@ -17,11 +17,7 @@ export const RADAR_SINGLE_CONFIG = {
     'http://lemonde.fr'
   ],
   datasets: [{
-<<<<<<< HEAD
     data: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)],
-=======
-    data: [10, 30, 20, 40,20, 10],
->>>>>>> 9397808345006c59f258a77101e9e8ffe843350a
     fill: true,
     backgroundColor: 'rgba(255, 99, 132, 0)',
     borderColor: '#FF1A44',
