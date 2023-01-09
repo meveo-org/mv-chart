@@ -1,6 +1,6 @@
 {
   "name": "@meveo-org/mv-chart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MvChart is a Meveo chart component (based on lit-element) that renders a content chart.  This is a component wrapper for [chartjs](https://www.chartjs.org/)",
   "main": "mv-chart.js",
   "directories": {
