@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "serve": "es-dev-server --node-resolve --watch"
+    "build": "webpack --config webpack.config.cjs"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,16 @@
   },
   "homepage": "https://github.com/meveo-org/mv-chart#readme",
   "devDependencies": {
-    "es-dev-server": "^1.46.1"
+    "es-dev-server": "^1.46.1",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "@meveo-org/mv-container": "^1.0.0",
+    "chartjs": "^0.3.24",
+    "chartjs-plugin-datalabels": "^2.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "lit": "^2.5.0",
+    "lit-element": "^3.2.2",
+    "webpack": "^5.75.0"
   }
 }
