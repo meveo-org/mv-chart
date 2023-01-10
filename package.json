@@ -29,6 +29,6 @@
     "chartjs": "^0.3.24",
     "chartjs-plugin-datalabels": "^2.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "lit": "^2.5.0",
+    "lit": "^2.5.0"
   }
 }
