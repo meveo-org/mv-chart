@@ -7,7 +7,7 @@ module.exports = {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, './docs'),
-    filename: 'demo-mv-chart.js',
+    filename: 'index.js',
   },
   devServer: {
     devMiddleware: {
@@ -18,6 +18,6 @@ module.exports = {
     }
   },
   plugins: [new HtmlWebpackPlugin({
-    template: "./index.html"
+    template: "index.html"
   })],
 };
