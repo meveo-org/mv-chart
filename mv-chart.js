@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit-element";
-import "chartjs";
-import "chartjs-plugin-datalabels";
+import Chart from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 export class MvChart extends LitElement {
   static get properties() {
